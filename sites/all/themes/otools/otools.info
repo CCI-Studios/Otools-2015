@@ -1,0 +1,13 @@
+name = Otools
+description = Otools Custom
+core = 7.x
+
+;scripts[] = js/filename.js
+
+stylesheets[all][] = css/screen.css
+
+regions[header] = Header
+regions[help] = Help
+regions[content] = Content
+regions[footer] = Footer
+
