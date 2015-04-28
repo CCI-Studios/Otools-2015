@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Otools feature.
+ */
+
+include_once 'otools.features.inc';
