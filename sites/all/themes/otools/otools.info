@@ -3,8 +3,11 @@ description = Otools Custom
 core = 7.x
 
 scripts[] = js/menu.js
+scripts[] = js/slick.min.js
+scripts[] = js/carousel.js
 
 stylesheets[all][] = css/screen.css
+stylesheets[all][] = css/slick.css
 
 regions[navigation] = Navigation
 regions[header] = Header

@@ -1,0 +1,59 @@
+.view-header-images
+{
+    .views-row
+    {
+        img
+        {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    .slick-dots
+    {
+        position: absolute;
+        z-index: 3;
+        bottom: 40px;
+        right: 10%;
+        list-style: none;
+        
+        li
+        {
+            float: left;
+            margin-left: 7px;
+            
+            &.slick-active button
+            {
+                border-color: $green;
+            }
+        }
+        button
+        {
+            font-size: 0;
+            border: 5px solid white;
+            border-radius: 5px;
+            width: 0;
+            height: 0;
+            -webkit-appearance: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+    }
+    
+    .view-content
+    {
+        &:after
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 56px;
+            background: url(../img/header-bg.png) bottom center;
+            background-size: 100% 56px;
+            z-index: 2;
+        }
+    }
+}
