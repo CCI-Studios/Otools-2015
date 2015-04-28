@@ -75,15 +75,17 @@
 
   <div class="page-wrapper"><div><div>
 
-    <div class="header"><div><div>
-
+    <div class="navigation"><div><div>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          <img src="<?php print $base_path.$directory; ?>/img/logo.svg" alt="<?php print t('Home'); ?>" />
         </a>
 
+      <?php print render($page['navigation']); ?>
+    </div></div></div> <!-- /.navigation -->
+    
+    <div class="header"><div><div>
       <?php print render($page['header']); ?>
-
-    </div></div></div> <!-- /#header -->
+    </div></div></div> <!-- /.header -->
 
     <div class="main-wrapper"><div><div>
 
@@ -97,13 +99,13 @@
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
         <?php print render($page['content']); ?>
-      </div></div></div> <!-- /#content -->
+      </div></div></div> <!-- /.content -->
 
-    </div></div></div> <!-- /#main, /#main-wrapper -->
+    </div></div></div> <!-- /.main-wrapper -->
 
     <div class="footer"><div><div>
       <?php print render($page['footer']); ?>
-    </div></div></div> <!-- /#footer -->
+    </div></div></div> <!-- /.footer -->
 
 
-  </div></div></div> <!-- /#page-wrapper -->
+  </div></div></div> <!-- /.page-wrapper -->
