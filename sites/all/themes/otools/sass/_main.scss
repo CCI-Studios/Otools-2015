@@ -14,6 +14,18 @@ p
     }
 }
 
+.main-wrapper
+{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    & > div
+    {
+        padding: 20px;
+    }
+}
+
 .navigation
 {
     position: relative;
@@ -344,7 +356,7 @@ p
 .footer
 {
     clear: both;
-    margin-top: 40px;
+    margin-top: 20px;
     background: linear-gradient(to right, #068f58, #62a984);
     color: white;
     
@@ -454,5 +466,72 @@ p
         height: 30px;
         width: 194px;
         background: url(../img/phone-number.svg) no-repeat top right;
+    }
+}
+
+body.rentals
+{
+    .page-title
+    {
+        display: none;
+    }
+}
+#block-menu-menu-rental-categories
+{
+    overflow: hidden;
+    
+    & > h2
+    {
+        @include aaronbold();
+        float: left;
+        color: $green;
+        font-weight: normal;
+        
+        &:after
+        {
+            content: "-";
+            padding-left: 8px;
+        }
+    }
+    .content
+    {
+        ul
+        {
+            @include aaronbold();
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            float: left;
+            
+            &.first.active-trail
+            {
+                margin-left: 8px;
+            }
+        }
+        a
+        {
+            color: $green;
+            text-decoration: none;
+            line-height: 16px;
+            padding: 8px 12px;
+            display: block;
+            vertical-align: bottom;
+            
+            &:hover
+            {
+                text-decoration: underline;
+            }
+            &.active
+            {
+                background: linear-gradient(to bottom, #068e57, #02794a);
+                color: white;
+            }
+        }
     }
 }
