@@ -4,6 +4,14 @@ body
     line-height: 1;
 }
 
+h1, h2, h3, h4, h5, h6
+{
+    @include aaronbold();
+    font-weight: normal;
+    color: $green;
+    padding-bottom: 0.25em;
+}
+
 p
 {
     margin-bottom: 0.8em;
@@ -407,16 +415,16 @@ p
     }
     .col1
     {
-        width: 155px;
+        width: 160px;
         clear: left;
     }
     .col2
     {
-        width: 215px;
+        width: 192px;
     }
     .col3
     {
-        width: 160px;
+        width: 168px;
     }
     a
     {
@@ -469,7 +477,7 @@ p
     }
 }
 
-body.rentals
+body.path-rentals
 {
     .page-title
     {
@@ -491,6 +499,17 @@ body.rentals
         {
             content: "-";
             padding-left: 8px;
+        }
+        
+        a
+        {
+            color: $green;
+            text-decoration: none;
+            
+            &:hover
+            {
+                text-decoration: underline;
+            }
         }
     }
     .content
@@ -533,5 +552,39 @@ body.rentals
                 color: white;
             }
         }
+    }
+}
+
+.related-items-container
+{
+    clear: both;
+    overflow: hidden;
+    
+    &:before
+    {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+        background: linear-gradient(to right,  rgba(16,144,92,0), rgba(16,144,92,1), rgba(16,144,92,0));
+    }
+    &:after
+    {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+        background: linear-gradient(to right,  rgba(16,144,92,0), rgba(16,144,92,1), rgba(16,144,92,0));
+    }
+    
+    h2
+    {
+        @include aaronbold();
+        font-weight: normal;
+        color: $green;
+        font-size: 1.25em;
+        padding-left: 16px;
     }
 }

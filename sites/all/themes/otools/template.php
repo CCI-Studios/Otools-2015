@@ -1,10 +1,11 @@
 <?php
 function otools_preprocess_html(&$variables)
 {
-    $parts = explode('/', request_path());
-    if ($parts[0] == 'rentals')
+    $path = drupal_get_path_alias($_GET['q']);
+    $aliases = explode('/', $path);
+    foreach($aliases as $alias)
     {
-        $variables['classes_array'][] = 'rentals';
+        $variables['classes_array'][] = 'path-'.drupal_clean_css_identifier($alias);
     }
 }
 ?>

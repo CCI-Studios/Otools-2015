@@ -61,6 +61,21 @@ function otools_image_default_styles() {
     ),
   );
 
+  // Exported image style: product_detail_thumbnail.
+  $styles['product_detail_thumbnail'] = array(
+    'label' => 'Product detail thumbnail',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 110,
+          'height' => 75,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: product_thumbnail.
   $styles['product_thumbnail'] = array(
     'label' => 'Product thumbnail',
@@ -76,6 +91,21 @@ function otools_image_default_styles() {
           'style_name' => 'product_thumbnail',
         ),
         'weight' => 0,
+      ),
+    ),
+  );
+
+  // Exported image style: related_item.
+  $styles['related_item'] = array(
+    'label' => 'Related item',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 154,
+          'height' => 126,
+        ),
+        'weight' => 1,
       ),
     ),
   );
