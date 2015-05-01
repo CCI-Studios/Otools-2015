@@ -5,6 +5,7 @@ core = 7.x
 scripts[] = js/menu.js
 scripts[] = js/slick.min.js
 scripts[] = js/carousel.js
+scripts[] = js/features.js
 scripts[] = js/product-detail-gallery.js
 
 stylesheets[all][] = css/screen.css

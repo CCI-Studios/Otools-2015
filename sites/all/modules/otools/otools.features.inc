@@ -26,6 +26,25 @@ function otools_views_api($module = NULL, $api = NULL) {
 function otools_image_default_styles() {
   $styles = array();
 
+  // Exported image style: feature.
+  $styles['feature'] = array(
+    'label' => 'Feature',
+    'effects' => array(
+      7 => array(
+        'name' => 'manualcrop_crop_and_scale',
+        'data' => array(
+          'width' => 300,
+          'height' => 300,
+          'upscale' => 0,
+          'respectminimum' => 1,
+          'onlyscaleifcrop' => 0,
+          'style_name' => 'feature',
+        ),
+        'weight' => 0,
+      ),
+    ),
+  );
+
   // Exported image style: header_image.
   $styles['header_image'] = array(
     'label' => 'Header image',
@@ -118,6 +137,14 @@ function otools_image_default_styles() {
  */
 function otools_node_info() {
   $items = array(
+    'feature' => array(
+      'name' => t('Feature'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'header_image' => array(
       'name' => t('Header image'),
       'base' => 'node_content',

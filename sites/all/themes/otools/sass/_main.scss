@@ -484,16 +484,19 @@ body.path-rentals
         display: none;
     }
 }
-#block-menu-menu-rental-categories
+#block-menu-menu-rental-categories,
+#edit-field-feature-category-tid-wrapper
 {
     overflow: hidden;
     
-    & > h2
+    & > h2,
+    & > label
     {
         @include aaronbold();
         float: left;
         color: $green;
         font-weight: normal;
+        font-size: 1.5em;
         
         &:after
         {
@@ -512,16 +515,23 @@ body.path-rentals
             }
         }
     }
-    .content
+    & > label:after
     {
+        padding: 0 8px 0 0;
+    }
+    .content,
+    .views-widget
+    {
+        @include aaronbold();
+        
         ul
         {
-            @include aaronbold();
             list-style: none;
             margin: 0;
             padding: 0;
         }
-        li
+        li,
+        .form-type-bef-link
         {
             list-style: none;
             margin: 0;
@@ -587,4 +597,10 @@ body.path-rentals
         font-size: 1.25em;
         padding-left: 16px;
     }
+}
+
+.views-exposed-form .views-exposed-widget
+{
+    float: none;
+    padding: 0;
 }
