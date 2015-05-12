@@ -1,0 +1,79 @@
+.navigation
+{
+    height: 167px;
+    
+    &:after
+    {
+        top: 87px;
+        height: 80px;
+    }
+}
+.logo
+{
+    top: 35px;
+}
+
+.footer:before
+{
+    height: 60px;
+}
+#block-menu-menu-footer-menu .content
+{
+    ul
+    {
+        width: auto;
+    }
+    li
+    {
+        width: auto !important;
+        text-align: center;
+        float: none;
+        margin: 0;
+    }
+    a
+    {
+        display: block;
+        padding: 4px 0;
+        margin: 0;
+    }
+}
+
+#block-menu-menu-rental-categories,
+#edit-field-feature-category-tid-wrapper
+{
+    & > h2,
+    & > label
+    {
+        font-size: 1.3em;
+    }
+    .content,
+    .views-widget
+    {
+        li,
+        .form-type-bef-link
+        {
+            clear: left;
+            
+            &:first-child
+            {
+                clear: none;
+                padding-left: 0;
+            }
+        }
+    }
+}
+#edit-field-feature-category-tid-wrapper .views-widget .form-type-bef-link
+{
+    padding-left: 132px;
+}
+#block-menu-menu-rental-categories .content li
+{
+    padding-left: 106px;
+}
+
+.view-rentals .views-row
+{
+    float: none;
+    margin-left: auto !important;
+    margin-right: auto;
+}

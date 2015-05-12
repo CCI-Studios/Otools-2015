@@ -1,0 +1,28 @@
+@media screen and (max-width: 1040px)
+{
+    @import "responsive-1040";
+}
+@media screen and (max-width: 980px)
+{
+    @import "responsive-980";
+}
+@media screen and (max-width: 860px)
+{
+    @import "responsive-860";
+}
+@media screen and (max-width: 750px)
+{
+    @import "responsive-750";
+}
+@media screen and (max-width: 480px)
+{
+    @import "responsive-480";
+}
+
+@media screen and (min-width: 751px)
+{
+    #block-system-main-menu .content .back
+    {
+        display: none;
+    }
+}

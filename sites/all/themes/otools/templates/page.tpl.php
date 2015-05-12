@@ -79,7 +79,7 @@
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo">
           <img src="<?php print $base_path.$directory; ?>/img/logo.svg" alt="<?php print t('Home'); ?>" />
         </a>
-
+        <a href="#" class="btn-menu">Open menu</a>
       <?php print render($page['navigation']); ?>
     </div></div></div> <!-- /.navigation -->
     

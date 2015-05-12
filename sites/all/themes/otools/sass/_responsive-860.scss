@@ -1,0 +1,118 @@
+.logo
+{
+    padding: 13px 0;
+    
+    img
+    {
+        height: 100px;
+        width: auto;
+        display: block;
+    }
+}
+.navigation
+{
+    height: 126px;
+    
+    &:after
+    {
+        height: 77px;
+    }
+}
+#block-menu-menu-top-menu ul.menu
+{
+    .cart,
+    .fb
+    {
+        a
+        {
+            height: 49px;
+        }
+    }
+    a
+    {
+        line-height: 49px;
+        padding: 0 10px;
+    }
+}
+#block-system-main-menu .content
+{
+    padding-top: 49px;
+    
+    & > ul > li
+    {
+        & > a
+        {
+            height: 77px;
+            
+            &:before
+            {
+                background-size: auto 30px;
+            }
+            &:after
+            {
+                bottom: 6px;
+            }
+        }
+        &.rentals > a
+        {
+            width: 180px;
+        }
+        
+        & > ul:before
+        {
+            display: none;
+        }
+    }
+}
+
+#block-menu-menu-footer-menu .content
+{
+    ul
+    {
+        width: 450px;
+        margin-left: 10%;
+    }
+    li
+    {
+        
+    }
+    .col1,
+    .col2,
+    .col3
+    {
+        clear: none;
+        width: 192px;
+    }
+}
+
+.view-rental-detail
+{
+    position: relative;
+    
+    .views-field-field-photos
+    {
+        margin-bottom: 100px;
+    }
+    
+    .views-field-field-photos-1
+    {
+        position: absolute;
+        left: 0;
+        top: 440px;
+        height: 80px;
+        width: 399px;
+        padding-right: 0;
+        
+        .slick-list,
+        .slick-track
+        {
+            height: auto !important;
+        }
+        
+        li
+        {
+            float: left;
+            width: auto !important;
+        }
+    }
+}

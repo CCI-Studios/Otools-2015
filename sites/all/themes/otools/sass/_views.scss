@@ -52,7 +52,7 @@
             width: 100%;
             height: 56px;
             background: url(../img/header-bg.png) bottom center;
-            background-size: 100% 56px;
+            background-size: 100% 100%;
             z-index: 2;
         }
     }
@@ -236,6 +236,7 @@
             height: 400px;
             line-height: 400px;
             text-align: center;
+            background: white;
             
             img
             {
@@ -294,6 +295,20 @@
     {
         color: $green;
     }
+    .call
+    {
+        @include aaronbold();
+        color: $green;
+        padding-top: 1.2em;
+        font-size: 1.2em;
+        
+        a
+        {
+            color: $green;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+    }
 }
 
 .view-related-items
@@ -342,7 +357,7 @@
             display: block;
             width: 100%;
             height: 1px;
-            margin: 15px 0;
+            margin-top: 15px;
             background: linear-gradient(to right,  rgba(16,144,92,0), rgba(16,144,92,1), rgba(16,144,92,0));
         }
     }
@@ -352,7 +367,6 @@
         float: left;
         margin: 8px;
         position: relative;
-        height: 304px;
         width: 304px;
         
         &:hover
@@ -400,6 +414,8 @@
         img
         {
             display: block;
+            width: 100%;
+            height: auto;
         }
     }
     .details
@@ -456,6 +472,7 @@
     .slick-next
     {
         right: -30px;
+        -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
     }
 }

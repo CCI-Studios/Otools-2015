@@ -1,0 +1,16 @@
+.view-features
+{
+    .slick-prev,
+    .slick-next
+    {
+        background-size: 22px auto;
+    }
+    .slick-prev
+    {
+        left: -20px;
+    }
+    .slick-next
+    {
+        right: -20px;
+    }
+}
