@@ -369,7 +369,20 @@
     }
 }
 
-.view-features .views-row a:after
+.view-features
 {
-    display: none;
+    .views-row a:after
+    {
+        display: none;
+    }
+    .field-image
+    {
+        border: 0;
+    }
+    .details
+    {
+        background-size: 100% 80px;
+        display: block;
+        position: static;
+    }
 }

@@ -18,7 +18,21 @@
             slide: '.views-row',
             dots: false,
             arrows: true,
-            slidesToShow: 3
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 680,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
         });
     }
 })(jQuery);
