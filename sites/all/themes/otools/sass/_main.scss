@@ -94,12 +94,14 @@ p
     height: 50px;
     width: 60px;
     background: url(../img/icon-menu-green.svg) no-repeat center center;
-    z-index: 102;
+    z-index: 1002;
     
     &.open,
     &:after
     {
         background-image: url(../img/icon-menu-white.svg);
+        -webkit-filter: drop-shadow(-1px 2px 2px rgba(0,0,0,0.2));
+        filter: drop-shadow(-1px 2px 2px rgba(0,0,0,0.2));
     }
     &:after
     {

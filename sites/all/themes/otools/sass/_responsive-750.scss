@@ -23,18 +23,25 @@
 .region-navigation
 {
     position: absolute;
-    left: -200px;
+    left: 0;
     top: 0;
     height: 99999px;
     width: 200px;
     background: rgba(4,134,83,0.95);
     overflow: hidden;
-    z-index: 100;
-    transition: left 0.4s;
+    z-index: 1000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+    transition: transform 0.4s;
     
     &.open
     {
-        left: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
 }
 #block-system-main-menu
@@ -57,6 +64,7 @@
                     height: 48px !important;
                     line-height: 48px !important;
                     width: auto !important;
+                    font-size: 0 !important;
                     -webkit-transform: translateX(0);
                     transform: translateX(0);
                     
@@ -103,6 +111,7 @@
                         width: auto;
                         float: none;
                         margin: 0;
+                        max-width: none;
                         
                         a
                         {
@@ -145,6 +154,8 @@
             transform: translateX(100%);
             transition: transform 0.4s, -webkit-transform 0.4s;
             padding: 0 10px;
+            -webkit-backface-visibility: hidden;
+            -webkit-perspective: 1000;
             
             &:focus,
             &:hover
@@ -179,6 +190,7 @@
         {
             height: 2em;
             line-height: 2em;
+            font-size: 1.5em;
             text-shadow: -1px 0 0 black, 1px 0 0 black,0 1px 0 black,0 -1px 0 black;
             
             &:after
@@ -355,4 +367,9 @@
         margin-right: 0;
         border-right: 0;
     }
+}
+
+.view-features .views-row a:after
+{
+    display: none;
 }
