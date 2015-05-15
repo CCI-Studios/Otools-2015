@@ -122,27 +122,43 @@ p
     {
         list-style: none;
         float: left;
+        padding: 0 5px;
     }
     
     .fb a,
     .cart a
     {
+        @include aaronbold();
         display: block;
-        font-size: 0;
         height: 49px;
-        width: 28px;
+        min-width: 28px;
+        line-height: 49px;
+        color: $green;
         background-repeat: no-repeat;
-        background-position: center center;
+        font-size: 0;
+        
+        .alt
+        {
+            font-size: 0;
+        }
+        .count
+        {
+            display: inline-block;
+            padding-left: 30px;
+            font-size: 16px;
+        }
     }
     .cart a
     {
         background-image: url(../img/cart.svg);
         background-size: 29px 23px;
+        background-position: left center;
     }
     .fb a
     {
         background-image: url(../img/fb.svg);
         background-size: 26px 26px;
+        background-position: center center;
     }
 }
 
@@ -191,9 +207,8 @@ p
         {
             font-size: 0;
             height: 59px;
-            width: 28px;
+            min-width: 28px;
             background-repeat: no-repeat;
-            background-position: center center;
             
             &:before
             {
@@ -202,10 +217,22 @@ p
                 position: absolute;
                 left: -999999px;
             }
+            
+            .alt
+            {
+                font-size: 0;
+            }
+            .count
+            {
+                display: inline-block;
+                padding-left: 30px;
+                font-size: 16px;
+            }
         }
         .cart a
         {
             background-image: url(../img/cart.svg);
+            background-position: 16px center;
             
             &:hover, &:focus, &:before
             {
@@ -215,6 +242,7 @@ p
         .fb a
         {
             background-image: url(../img/fb.svg);
+            background-position: center center;
             
             &:hover, &:focus, &:before
             {

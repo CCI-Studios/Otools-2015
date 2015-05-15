@@ -367,6 +367,14 @@
         margin-right: 0;
         border-right: 0;
     }
+    .views-field-title,
+    .views-field-field-price,
+    .views-field-body,
+    .views-field-nothing
+    {
+        padding-left: 0;
+        clear: both;
+    }
 }
 
 .view-features

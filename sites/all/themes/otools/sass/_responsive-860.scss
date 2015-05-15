@@ -72,10 +72,6 @@
         width: 450px;
         margin-left: 10%;
     }
-    li
-    {
-        
-    }
     .col1,
     .col2,
     .col3
@@ -89,19 +85,12 @@
 {
     position: relative;
     
-    .views-field-field-photos
-    {
-        margin-bottom: 100px;
-    }
-    
     .views-field-field-photos-1
     {
-        position: absolute;
-        left: 0;
-        top: 440px;
-        height: 80px;
-        width: 399px;
+        width: 420px;
         padding-right: 0;
+        position: relative;
+        z-index: 1;
         
         .slick-list,
         .slick-track
@@ -113,6 +102,14 @@
         {
             float: left;
             width: auto !important;
+            margin-right: 3px;
         }
+    }
+    .views-field-title,
+    .views-field-field-price,
+    .views-field-body,
+    .views-field-nothing
+    {
+        padding-left: 433px;
     }
 }
