@@ -6,6 +6,7 @@ scripts[] = js/menu.js
 scripts[] = js/slick.min.js
 scripts[] = js/carousel.js
 scripts[] = js/features.js
+scripts[] = js/jquery.zoom.min.js
 scripts[] = js/product-detail-gallery.js
 
 stylesheets[all][] = css/screen.css

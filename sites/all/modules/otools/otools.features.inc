@@ -68,12 +68,12 @@ function otools_image_default_styles() {
   $styles['product_detail'] = array(
     'label' => 'Product detail',
     'effects' => array(
-      4 => array(
+      1 => array(
         'name' => 'image_scale',
         'data' => array(
-          'width' => 400,
-          'height' => 400,
-          'upscale' => 0,
+          'width' => 800,
+          'height' => 800,
+          'upscale' => 1,
         ),
         'weight' => 1,
       ),

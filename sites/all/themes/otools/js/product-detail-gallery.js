@@ -20,5 +20,7 @@
             swipe: false,
             asNavFor: '.view-rental-detail .views-field-field-photos ul'
         });
+        
+        $(".view-rental-detail .views-field-field-photos li").zoom();
     });
 })(jQuery);
