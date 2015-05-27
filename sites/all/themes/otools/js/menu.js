@@ -4,6 +4,7 @@
         $("<div class='top-menu-mobile' />").append($(".navigation .cart, .navigation .fb").clone()).insertAfter(".region-navigation");
         $("#block-system-main-menu .content").on("click touchstart", "a", menuItemClick);
         $(".btn-menu").on("click touchstart", btnMenuClick);
+        $(".btn-cart-quote").on("click", btnCartQuote);
     });
     
     function isMobile()
@@ -46,6 +47,21 @@
     {
         $(".region-navigation").toggleClass("open");
         $(this).toggleClass("open");
+        return false;
+    }
+    
+    function btnCartQuote()
+    {
+        if ($(".cart-quote").css("display") == "none")
+        {
+            $("html, body").animate({
+                scrollTop: document.body.scrollHeight
+            }, function(){
+                $(".cart-quote input").first().focus();
+            });
+            
+        }
+        $(".cart-quote").slideToggle();
         return false;
     }
 })(jQuery);
