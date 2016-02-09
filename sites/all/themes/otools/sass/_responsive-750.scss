@@ -72,6 +72,7 @@
                     {
                         background-position: left center;
                         left: 10px;
+                        height: auto;
                     }
                     &:after
                     {
@@ -186,7 +187,7 @@
                 z-index: 101;
             }
         }
-        .expanded > a
+        .expanded:not(.view-all) > a
         {
             height: 2em;
             line-height: 2em;
@@ -207,6 +208,10 @@
                 transform: rotate(-90deg);
                 background: url(../img/arrow-down.svg) no-repeat bottom center;
             }
+        }
+        .view-all > a
+        {
+            height: 2em !important;
         }
         .back a
         {
@@ -323,7 +328,7 @@
     padding-top: 30px;
 }
 
-.view-rentals .views-row
+.view-listings .views-row
 {
     border-left: 0;
     

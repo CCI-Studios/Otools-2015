@@ -10,7 +10,7 @@
 function otools_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function otools_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_feature_category'
+  // Exported field_base: 'field_feature_category'.
   $field_bases['field_feature_category'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -57,7 +57,7 @@ function otools_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -79,7 +79,7 @@ function otools_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_link'
+  // Exported field_base: 'field_link'.
   $field_bases['field_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -100,7 +100,7 @@ function otools_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_photos'
+  // Exported field_base: 'field_photos'.
   $field_bases['field_photos'] = array(
     'active' => 1,
     'cardinality' => 5,
@@ -122,7 +122,7 @@ function otools_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_price'
+  // Exported field_base: 'field_price'.
   $field_bases['field_price'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -143,7 +143,7 @@ function otools_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_rental_category'
+  // Exported field_base: 'field_rental_category'.
   $field_bases['field_rental_category'] = array(
     'active' => 1,
     'cardinality' => -1,

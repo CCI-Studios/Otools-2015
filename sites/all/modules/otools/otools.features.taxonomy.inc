@@ -10,7 +10,7 @@
 function otools_taxonomy_default_vocabularies() {
   return array(
     'feature_category' => array(
-      'name' => 'Feature category',
+      'name' => 'Feature Category',
       'machine_name' => 'feature_category',
       'description' => '',
       'hierarchy' => 0,

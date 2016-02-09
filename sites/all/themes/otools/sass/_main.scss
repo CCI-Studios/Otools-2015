@@ -30,6 +30,12 @@ hr
     background: linear-gradient(to right, rgba(16,144,92,0), #10905c, rgba(16,144,92,0));
 }
 
+ul, ol
+{
+    margin-left: 30px;
+    margin-bottom: 0.8em;
+}
+
 .page-wrapper
 {
     overflow: hidden;
@@ -261,6 +267,7 @@ hr
         {
             background-image: url(../img/fb.svg);
             background-position: center center;
+            background-size: 20px 20px;
             
             &:hover, &:focus, &:before
             {
@@ -270,6 +277,10 @@ hr
     }
 }
 
+#block-system-main-menu
+{
+    position: static;
+}
 #block-system-main-menu .content
 {
     @include aaronbold();
@@ -331,6 +342,7 @@ hr
                 display: inline-block;
                 vertical-align: middle;
                 line-height: normal;
+                height: 40px;
             }
             &:after
             {
@@ -381,11 +393,13 @@ hr
             width: 80%;
             padding: 40px 10%;
             opacity: 0;
+            background: #60a986;
             background: linear-gradient(to right, #068e57, #60a986, #068e57);
             box-shadow: 0 3px 3px rgba(0,0,0,0.3);
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             text-shadow: -1px 2px 1px rgba(0,0,0,0.2);
+            filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=225);
             overflow: hidden;
             z-index: -1;
             margin-top: -40px;
@@ -429,13 +443,14 @@ hr
                 {
                     font-size: 1.5em;
                     height: auto;
+                    margin-bottom: 15px;
                 }
             }
             
             ul
             {
                 overflow: hidden;
-                padding: 15px 0;
+                padding-bottom: 15px;
                 position: relative;
                 
                 &:after
@@ -493,6 +508,7 @@ hr
 {
     clear: both;
     margin-top: 20px;
+    background: #068f58;
     background: linear-gradient(to right, #068f58, #62a984);
     color: white;
     position: relative;
@@ -608,14 +624,15 @@ hr
     }
 }
 
-body.path-rentals
+body.path-rentals,
+body.path-carts
 {
     .page-title
     {
         display: none;
     }
 }
-#block-menu-menu-rental-categories,
+.block-menu.menu-terms,
 #edit-field-feature-category-tid-wrapper
 {
     overflow: hidden;
@@ -628,6 +645,7 @@ body.path-rentals
         color: $green;
         font-weight: normal;
         font-size: 1.5em;
+        line-height: 32px;
         
         &:after
         {
@@ -689,6 +707,7 @@ body.path-rentals
             }
             &.active
             {
+                background: #02794a;
                 background: linear-gradient(to bottom, #068e57, #02794a);
                 color: white;
             }
@@ -841,6 +860,13 @@ body.path-about .main-wrapper > div
         text-shadow: -1px 1px 2px rgba(0,0,0,0.2);
         box-shadow: -1px 1px 2px rgba(0,91,55,0.5);
         border-radius: 2px;
+        -webkit-appearance: none;
+        appearance: none;
+        
+        &:hover
+        {
+            background: #02794a;
+        }
     }
 }
 

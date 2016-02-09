@@ -30,17 +30,17 @@ function otools_image_default_styles() {
   $styles['feature'] = array(
     'label' => 'Feature',
     'effects' => array(
-      7 => array(
-        'name' => 'manualcrop_crop_and_scale',
+      2 => array(
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 300,
           'height' => 300,
-          'upscale' => 0,
-          'respectminimum' => 1,
-          'onlyscaleifcrop' => 0,
-          'style_name' => 'feature',
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
         ),
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
   );
@@ -50,16 +50,16 @@ function otools_image_default_styles() {
     'label' => 'Header image',
     'effects' => array(
       1 => array(
-        'name' => 'manualcrop_crop_and_scale',
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 1220,
           'height' => 480,
-          'upscale' => 0,
-          'respectminimum' => 1,
-          'onlyscaleifcrop' => 0,
-          'style_name' => 'header_image',
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
         ),
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
   );
@@ -99,17 +99,14 @@ function otools_image_default_styles() {
   $styles['product_thumbnail'] = array(
     'label' => 'Product thumbnail',
     'effects' => array(
-      2 => array(
-        'name' => 'manualcrop_crop_and_scale',
+      5 => array(
+        'name' => 'image_scale',
         'data' => array(
           'width' => 212,
           'height' => 180,
           'upscale' => 0,
-          'respectminimum' => 1,
-          'onlyscaleifcrop' => 0,
-          'style_name' => 'product_thumbnail',
         ),
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
   );
@@ -154,7 +151,7 @@ function otools_node_info() {
       'help' => '',
     ),
     'rental' => array(
-      'name' => t('Rental'),
+      'name' => t('Rentals'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

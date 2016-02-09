@@ -30,7 +30,7 @@ function otools_ckeditor_profile_defaults() {
         'auto_lang' => 't',
         'language_direction' => 'default',
         'allowed_content' => 't',
-        'extraAllowedContent' => '',
+        'extraAllowedContent' => 'embed[*];hr;iframe[*];div[class];',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;h2;h3;h4',

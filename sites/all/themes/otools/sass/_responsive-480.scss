@@ -38,13 +38,18 @@
     }
 }
 
-#block-menu-menu-rental-categories,
+.block-menu.menu-terms,
 #edit-field-feature-category-tid-wrapper
 {
     & > h2,
     & > label
     {
         font-size: 1.3em;
+        
+        &:after
+        {
+            display: none;
+        }
     }
     .content,
     .views-widget
@@ -53,27 +58,24 @@
         .form-type-bef-link
         {
             clear: left;
-            
-            &:first-child
-            {
-                clear: none;
-                padding-left: 0;
-            }
+            margin: 0;
+        }
+        li.first.active-trail
+        {
+            margin-left: 0;
         }
     }
 }
-#edit-field-feature-category-tid-wrapper .views-widget .form-type-bef-link
-{
-    padding-left: 132px;
-}
-#block-menu-menu-rental-categories .content li
-{
-    padding-left: 106px;
-}
 
-.view-rentals .views-row
+.view-listings .views-row
 {
     float: none;
     margin-left: auto !important;
     margin-right: auto;
+}
+
+.block.cart-quote fieldset
+{
+    float: none;
+    margin-right: 0;
 }

@@ -26,18 +26,22 @@
         {
             if ($(this).parent().hasClass("back"))
             {
-                $(this).parent().parent().parent().removeClass("open").parent().removeClass("open-child").parent().addClass("open");
+                $(this).closest(".open").removeClass("open")
+                .parent().removeClass("open-child")
+                .parent().addClass("open");
+                
                 if ($(this).is("#block-system-main-menu .content > ul > li > ul > li > a"))
                 {
                     $("#block-system-main-menu").removeClass("open");
                 }
                 return false;
             }
-            else if ($(this).is(".expanded > a"))
+            else if ($(this).is(".expanded:not(.view-all) > a"))
             {
                 $(this).parent().toggleClass("open")
                 .parent().toggleClass("open-child")
                 .parents(".open").not(".region-navigation").removeClass("open");
+                
                 $(this).parents("#block-system-main-menu").addClass("open");
                 return false;
             }

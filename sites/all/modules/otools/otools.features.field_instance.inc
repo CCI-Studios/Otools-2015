@@ -10,7 +10,7 @@
 function otools_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-feature-body'
+  // Exported field_instance: 'node-feature-body'.
   $field_instances['node-feature-body'] = array(
     'bundle' => 'feature',
     'default_value' => NULL,
@@ -55,7 +55,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feature-field_feature_category'
+  // Exported field_instance: 'node-feature-field_feature_category'.
   $field_instances['node-feature-field_feature_category'] = array(
     'bundle' => 'feature',
     'default_value' => NULL,
@@ -92,7 +92,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feature-field_image'
+  // Exported field_instance: 'node-feature-field_image'.
   $field_instances['node-feature-field_image'] = array(
     'bundle' => 'feature',
     'deleted' => 0,
@@ -158,7 +158,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feature-field_link'
+  // Exported field_instance: 'node-feature-field_link'.
   $field_instances['node-feature-field_link'] = array(
     'bundle' => 'feature',
     'default_value' => NULL,
@@ -198,7 +198,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-header_image-field_image'
+  // Exported field_instance: 'node-header_image-field_image'.
   $field_instances['node-header_image-field_image'] = array(
     'bundle' => 'header_image',
     'deleted' => 0,
@@ -264,7 +264,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-header_image-field_link'
+  // Exported field_instance: 'node-header_image-field_link'.
   $field_instances['node-header_image-field_link'] = array(
     'bundle' => 'header_image',
     'default_value' => NULL,
@@ -304,7 +304,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rental-body'
+  // Exported field_instance: 'node-rental-body'.
   $field_instances['node-rental-body'] = array(
     'bundle' => 'rental',
     'default_value' => NULL,
@@ -349,7 +349,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rental-field_image'
+  // Exported field_instance: 'node-rental-field_image'.
   $field_instances['node-rental-field_image'] = array(
     'bundle' => 'rental',
     'deleted' => 0,
@@ -413,7 +413,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rental-field_photos'
+  // Exported field_instance: 'node-rental-field_photos'.
   $field_instances['node-rental-field_photos'] = array(
     'bundle' => 'rental',
     'deleted' => 0,
@@ -475,7 +475,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rental-field_price'
+  // Exported field_instance: 'node-rental-field_price'.
   $field_instances['node-rental-field_price'] = array(
     'bundle' => 'rental',
     'default_value' => NULL,
@@ -517,7 +517,7 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rental-field_rental_category'
+  // Exported field_instance: 'node-rental-field_rental_category'.
   $field_instances['node-rental-field_rental_category'] = array(
     'bundle' => 'rental',
     'default_value' => NULL,
