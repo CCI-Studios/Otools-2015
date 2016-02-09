@@ -134,6 +134,14 @@ function otools_image_default_styles() {
  */
 function otools_node_info() {
   $items = array(
+    'carts' => array(
+      'name' => t('Carts'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'feature' => array(
       'name' => t('Feature'),
       'base' => 'node_content',
@@ -144,6 +152,14 @@ function otools_node_info() {
     ),
     'header_image' => array(
       'name' => t('Header image'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'parts' => array(
+      'name' => t('Parts'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
