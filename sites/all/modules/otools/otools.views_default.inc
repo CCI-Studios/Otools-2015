@@ -760,7 +760,8 @@ function otools_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Custom Text: Please Call';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p class="call">Please call <a href="tel:5197865902">(519)786-5902</a> to confirm rental times</p>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p class="call">Please call <a href="tel:5197865902">(519)786-5902</a> <br>for availability</p>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
