@@ -65,11 +65,14 @@ function otools_views_default_views() {
   $handler->display->display_options['fields']['field_photos']['table'] = 'field_data_field_photos';
   $handler->display->display_options['fields']['field_photos']['field'] = 'field_photos';
   $handler->display->display_options['fields']['field_photos']['label'] = '';
+  $handler->display->display_options['fields']['field_photos']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_photos']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_photos']['alter']['text'] = '<div class="views-field-field-photos">[field_photos]</div>';
   $handler->display->display_options['fields']['field_photos']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_photos']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_photos']['settings'] = array(
     'image_style' => 'product_thumbnail',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_photos']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_photos']['delta_offset'] = '0';
@@ -78,18 +81,33 @@ function otools_views_default_views() {
   $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
   $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
   $handler->display->display_options['fields']['field_price']['label'] = '';
+  $handler->display->display_options['fields']['field_price']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_price']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_price']['alter']['text'] = '<div class="views-field-field-price">[field_price]</div>';
   $handler->display->display_options['fields']['field_price']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="[path]">[title]</a>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="views-field-title">[title]</div>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[path]"><div>
+[field_photos]
+[field_price]
+[title]
+</div></a>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -577,6 +595,7 @@ function otools_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
@@ -707,6 +726,43 @@ function otools_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h1';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Price */
+  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
+  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['hide_empty'] = TRUE;
+  /* Field: Content: Prices */
+  $handler->display->display_options['fields']['field_prices']['id'] = 'field_prices';
+  $handler->display->display_options['fields']['field_prices']['table'] = 'field_data_field_prices';
+  $handler->display->display_options['fields']['field_prices']['field'] = 'field_prices';
+  $handler->display->display_options['fields']['field_prices']['label'] = 'Price';
+  $handler->display->display_options['fields']['field_prices']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_prices']['hide_empty'] = TRUE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Custom Text: Please Call */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Custom Text: Please Call';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p class="call">Please call <a href="tel:5197865902">(519)786-5902</a> <br>for availability</p>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Photos */
   $handler->display->display_options['fields']['field_photos']['id'] = 'field_photos';
   $handler->display->display_options['fields']['field_photos']['table'] = 'field_data_field_photos';
@@ -733,36 +789,6 @@ function otools_views_default_views() {
   );
   $handler->display->display_options['fields']['field_photos_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_photos_1']['multi_type'] = 'ul';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h1';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Price */
-  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
-  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['element_type'] = 'span';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Custom Text: Please Call */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Custom Text: Please Call';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<p class="call">Please call <a href="tel:5197865902">(519)786-5902</a> <br>for availability</p>';
-  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
@@ -850,31 +876,41 @@ function otools_views_default_views() {
   $handler->display->display_options['fields']['field_photos']['table'] = 'field_data_field_photos';
   $handler->display->display_options['fields']['field_photos']['field'] = 'field_photos';
   $handler->display->display_options['fields']['field_photos']['label'] = '';
+  $handler->display->display_options['fields']['field_photos']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_photos']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_photos']['alter']['text'] = '<div class="views-field-field-photos">[field_photos]</div>';
   $handler->display->display_options['fields']['field_photos']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_photos']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_photos']['settings'] = array(
     'image_style' => 'product_thumbnail',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_photos']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_photos']['delta_offset'] = '0';
-  /* Field: Content: Price */
-  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
-  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
-  $handler->display->display_options['fields']['field_price']['label'] = '';
-  $handler->display->display_options['fields']['field_price']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="[path]">[title]</a>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<div class="views-field-title">[title]</div>';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[path]"><div>
+[field_photos]
+[title]
+</div></a>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

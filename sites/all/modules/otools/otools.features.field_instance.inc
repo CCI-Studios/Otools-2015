@@ -557,6 +557,96 @@ function otools_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-parts-field_photos'.
+  $field_instances['node-parts-field_photos'] = array(
+    'bundle' => 'parts',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_photos',
+    'label' => 'Photos',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-parts-field_price'.
+  $field_instances['node-parts-field_price'] = array(
+    'bundle' => 'parts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_price',
+    'label' => 'Price',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-rental-body'.
   $field_instances['node-rental-body'] = array(
     'bundle' => 'rental',
@@ -652,21 +742,19 @@ function otools_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-rental-field_price'.
-  $field_instances['node-rental-field_price'] = array(
+  // Exported field_instance: 'node-rental-field_prices'.
+  $field_instances['node-rental-field_prices'] = array(
     'bundle' => 'rental',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Include $ sign if necessary. Follow the same format as other items.<br>
-<i>Example:</i> $30.00/day<br>
-<i>Example:</i> call for price',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -676,9 +764,9 @@ function otools_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_price',
-    'label' => 'Price',
-    'required' => 1,
+    'field_name' => 'field_prices',
+    'label' => 'Prices',
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -687,10 +775,10 @@ function otools_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
-      'weight' => 4,
+      'type' => 'text_textarea',
+      'weight' => 7,
     ),
   );
 
@@ -737,13 +825,11 @@ function otools_field_default_field_instances() {
   t('Cart Category');
   t('Feature category');
   t('Image');
-  t('Include $ sign if necessary. Follow the same format as other items.<br>
-<i>Example:</i> $30.00/day<br>
-<i>Example:</i> call for price');
   t('Link');
   t('Parts Category');
   t('Photos');
   t('Price');
+  t('Prices');
   t('Rental Category');
 
   return $field_instances;
