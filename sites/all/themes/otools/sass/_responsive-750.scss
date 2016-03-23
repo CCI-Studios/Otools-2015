@@ -25,7 +25,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    height: 99999px;
+    height: 100%;
     width: 200px;
     background: rgba(4,134,83,0.95);
     overflow: hidden;
@@ -73,16 +73,6 @@
                         background-position: left center;
                         left: 10px;
                         height: auto;
-                    }
-                    &:after
-                    {
-                        bottom: 50%;
-                        margin-bottom: -5px;
-                        left: auto;
-                        right: 10px;
-                        -webkit-transform: rotate(-90deg);
-                        transform: rotate(-90deg);
-                        transition: none;
                     }
                     &:focus,
                     &:hover
@@ -137,14 +127,27 @@
                         }
                     }
                 }
-                &.open > a
+                &.expanded
                 {
-                    background: #10754e;
-                    
-                    &:after
+                    & > a:after
                     {
+                        bottom: 50%;
+                        margin-bottom: -5px;
+                        left: auto;
+                        right: 10px;
                         -webkit-transform: rotate(-90deg);
                         transform: rotate(-90deg);
+                        transition: none;
+                    }
+                    &.open > a
+                    {
+                        background: #10754e;
+                        
+                        &:after
+                        {
+                            -webkit-transform: rotate(-90deg);
+                            transform: rotate(-90deg);
+                        }
                     }
                 }
             }
@@ -397,5 +400,58 @@
         background-size: 100% 80px;
         display: block;
         position: static;
+    }
+}
+
+.menu-terms-dropdown
+{
+    float: none;
+    margin-right: 0;
+    
+    h2
+    {
+        display: inline-block;
+        padding: 2px 0 0 0;
+    }
+    .content
+    {
+        display: inline-block;
+        vertical-align: top;
+        
+        ul
+        {
+            position: absolute;
+            margin-left: 12px;
+            background-color: $green;
+            width: 188px;
+            height: 31px;
+            overflow: hidden;
+            z-index: 101;
+        }
+        li
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-color: white;
+        }
+        a
+        {
+            padding: 0 8px;
+            color: white;
+            
+            &:hover
+            {
+                background: #259666;
+            }
+        }
+        .active-trail a
+        {
+            background: #259666;
+        }
+        .select-category
+        {
+            display: block;
+        }
     }
 }

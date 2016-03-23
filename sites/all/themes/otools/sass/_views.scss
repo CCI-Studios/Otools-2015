@@ -34,6 +34,7 @@
             border-radius: 5px;
             width: 0;
             height: 0;
+            padding: 0;
             -webkit-appearance: none;
             cursor: pointer;
             transition: all 0.2s;
@@ -61,7 +62,8 @@
 .view-listings
 {
     position: relative;
-    margin-top: 16px;
+    padding-top: 16px;
+    overflow: hidden;
     
     &:before
     {
@@ -107,7 +109,7 @@
             }
         }
         
-        & > div
+        a > div
         {
             position: relative;
             padding: 10px;
@@ -116,11 +118,6 @@
             {
                 color: white;
                 background-color: #ebebeb;
-                
-                a
-                {
-                    color: white;
-                }
                 
                 &:after
                 {
@@ -135,21 +132,21 @@
                     z-index: 0;
                 }
                 
-                .views-field-field-price
-                {
-                    text-shadow: -1px 2px 2px rgba(0,0,0,0.25);
-                    
-                    &:after
-                    {
-                        background: linear-gradient(to right,  rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0));
-                    }
-                }
                 
-                .views-field-title
-                {
-                    text-shadow: -1px 1px 1px rgba(0,0,0,0.2);
-                }
             }
+        }
+        .views-field-field-price
+        {
+            text-shadow: -1px 2px 2px rgba(0,0,0,0.25);
+            
+            &:after
+            {
+                background: linear-gradient(to right,  rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0));
+            }
+        }
+        .views-field-title
+        {
+            text-shadow: -1px 1px 1px rgba(0,0,0,0.2);
         }
         
         a
@@ -158,7 +155,7 @@
             text-decoration: none;
         }
     }
-    .views-field-field-photos a
+    .views-field-field-photos
     {
         display: block;
         width: 212px;
@@ -260,9 +257,6 @@
     {
         float: left;
         width: 110px;
-        padding-right: 15px;
-        border-right: 1px solid #f1f1f1;
-        margin-right: 15px;
         
         ul
         {
@@ -297,6 +291,7 @@
         font-weight: normal;
         font-size: 1.5em;
     }
+    .views-field-field-prices,
     .views-field-field-price
     {
         @include aaronbold();
@@ -314,18 +309,11 @@
             font-size: 1.3em;
         }
     }
-    .views-field-title,
-    .views-field-field-price,
-    .views-field-body,
-    .views-field-nothing
-    {
-        padding-left: 572px;
-    }
     .call
     {
         @include aaronbold();
         color: $green;
-        padding-top: 1.2em;
+        padding: 1.2em 0;
         font-size: 1.2em;
         
         a
@@ -388,10 +376,15 @@
         li
         {
             list-style: none;
-            margin: 0 16px;
+            margin: 0 12px 24px 12px;
             padding: 0;
             float: left;
         }
+    }
+    a
+    {
+        display: block;
+        font-size: 0;
     }
     img
     {
@@ -531,7 +524,9 @@
         display: block;
         top: 50%;
         margin-top: -20px;
+        padding: 0;
         font-size: 0;
+        box-shadow: none;
         -webkit-filter: drop-shadow(-1px 2px 2px rgba(0,91,55,0.6));
         filter: drop-shadow(-1px 2px 2px rgba(0,91,55,0.6));
     }

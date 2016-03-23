@@ -15,7 +15,7 @@
     {
         if (!isMobile())
         {
-            if ($(this).is("#block-system-main-menu .content > ul > li > a"))
+            if ($(this).is("#block-system-main-menu .content > ul > li.expanded > a"))
             {
                 $("#block-system-main-menu .open").not($(this).parent()).removeClass("open");
                 $(this).parent().toggleClass("open");

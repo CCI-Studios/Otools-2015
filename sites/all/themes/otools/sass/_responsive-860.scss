@@ -48,10 +48,10 @@
             {
                 background-size: auto 30px;
             }
-            &:after
-            {
-                bottom: 6px;
-            }
+        }
+        &.expanded > a:after
+        {
+            bottom: 6px;
         }
         &.rentals > a
         {
@@ -90,10 +90,18 @@
 {
     position: relative;
     
+    .views-field-field-photos
+    {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+    }
     .views-field-field-photos-1
     {
         width: 415px;
         padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
         position: relative;
         z-index: 1;
         
@@ -109,12 +117,5 @@
             width: auto !important;
             margin-right: 3px;
         }
-    }
-    .views-field-title,
-    .views-field-field-price,
-    .views-field-body,
-    .views-field-nothing
-    {
-        padding-left: 431px;
     }
 }
