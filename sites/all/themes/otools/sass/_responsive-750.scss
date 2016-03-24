@@ -407,6 +407,7 @@
 {
     float: none;
     margin-right: 0;
+    width: auto;
     
     h2
     {
@@ -423,7 +424,7 @@
             position: absolute;
             margin-left: 12px;
             background-color: $green;
-            width: 188px;
+            width: 232px;
             height: 31px;
             overflow: hidden;
             z-index: 101;
@@ -434,11 +435,14 @@
             margin: 0;
             padding: 0;
             border-color: white;
+            height: 30px;
         }
         a
         {
             padding: 0 8px;
             color: white;
+            line-height: 30px;
+            height: 30px;
             
             &:hover
             {

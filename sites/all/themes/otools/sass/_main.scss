@@ -629,7 +629,8 @@ ul, ol
 }
 
 body.path-rentals,
-body.path-carts
+body.path-carts,
+body.path-parts
 {
     .page-title
     {
@@ -723,6 +724,7 @@ body.path-carts
 {
     float: left;
     margin-right: 20px;
+    width: 182px;
     
     h2
     {
@@ -753,18 +755,15 @@ body.path-carts
             list-style: none;
             margin: 0;
             padding: 0;
-            height: 30px;
             font-size: 0.9em;
             border-bottom: 1px solid $green;
         }
         a
         {
             display: block;
-            padding: 0 6px;
+            padding: 7px 6px;
             color: $green;
             text-decoration: none;
-            line-height: 30px;
-            height: 30px;
             font-weight: bold;
         }
         a:hover,
