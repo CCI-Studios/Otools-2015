@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function otools_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "feeds" && $api == "feeds_importer_default") {
+    return array("version" => "1");
+  }
   if ($module == "taxonomy_display" && $api == "taxonomy_display") {
     return array("version" => "1");
   }
@@ -136,6 +139,14 @@ function otools_node_info() {
   $items = array(
     'carts' => array(
       'name' => t('Carts'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'event_photos' => array(
+      'name' => t('Event Photos'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

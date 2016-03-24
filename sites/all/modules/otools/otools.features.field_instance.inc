@@ -181,6 +181,56 @@ function otools_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event_photos-field_event_photos'.
+  $field_instances['node-event_photos-field_event_photos'] = array(
+    'bundle' => 'event_photos',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_photos',
+    'label' => 'Event Photos',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'multiupload_imagefield_widget',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_miw',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-feature-body'.
   $field_instances['node-feature-body'] = array(
     'bundle' => 'feature',
@@ -823,6 +873,7 @@ function otools_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Cart Category');
+  t('Event Photos');
   t('Feature category');
   t('Image');
   t('Link');
