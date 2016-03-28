@@ -459,3 +459,15 @@
         }
     }
 }
+
+body.path-about .main-wrapper>div
+{
+    background: none;
+    
+    &>div
+    {
+        padding-left: 0;
+        border-left: 0;
+        margin-left: 0;
+    }
+}

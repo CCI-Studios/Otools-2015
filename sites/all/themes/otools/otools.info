@@ -9,6 +9,7 @@ scripts[] = js/features.js
 scripts[] = js/category-dropdown.js
 scripts[] = js/jquery.zoom.min.js
 scripts[] = js/product-detail-gallery.js
+scripts[] = js/minheight.js
 
 stylesheets[all][] = css/screen.css
 stylesheets[all][] = css/slick.css
