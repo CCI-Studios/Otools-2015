@@ -29,6 +29,22 @@ function otools_views_api($module = NULL, $api = NULL) {
 function otools_image_default_styles() {
   $styles = array();
 
+  // Exported image style: event_photo.
+  $styles['event_photo'] = array(
+    'label' => 'Event photo',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 800,
+          'height' => 600,
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: feature.
   $styles['feature'] = array(
     'label' => 'Feature',

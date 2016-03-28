@@ -191,8 +191,8 @@ function otools_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'file',
+          'image_style' => 'event_photo',
         ),
         'type' => 'image',
         'weight' => 0,
