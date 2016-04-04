@@ -542,3 +542,42 @@
         transform: scaleX(-1);
     }
 }
+
+
+.view-event-galleries
+{
+    .view-content
+    {
+        margin: 0 -12px;
+    }
+    .views-row
+    {
+        width: 220px;
+        float: left;
+        margin: 0 12px 25px 12px;
+        position: relative;
+        
+        a
+        {
+            text-decoration: none;
+            color: white;
+        }
+    }
+    img
+    {
+        display: block;
+    }
+    .views-field-title
+    {
+        @include aaronbold();
+        background: url(../img/product-listing-hover.png) no-repeat bottom center;
+        text-align: center;
+        padding: 40px 10px 10px 10px;
+        min-height: 36px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-shadow: -2px 3px 4px rgba(0,0,0,0.2);
+    }
+}
