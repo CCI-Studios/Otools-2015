@@ -18,7 +18,7 @@ function otools_ckeditor_profile_defaults() {
     [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\'],
     [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\'],
     [\'RemoveFormat\'],
-    [\'Link\',\'Unlink\',\'Image\',\'Table\']
+    [\'Link\',\'Unlink\',\'Image\',\'Table\',\'HorizontalRule\']
 ]',
         'expand' => 't',
         'default' => 't',

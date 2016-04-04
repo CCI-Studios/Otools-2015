@@ -49,6 +49,7 @@ features[field_instance][] = node-rental-field_photos
 features[field_instance][] = node-rental-field_prices
 features[field_instance][] = node-rental-field_rental_category
 features[filter][] = full_html
+features[image][] = event_gallery_thumbnail
 features[image][] = event_photo
 features[image][] = feature
 features[image][] = header_image

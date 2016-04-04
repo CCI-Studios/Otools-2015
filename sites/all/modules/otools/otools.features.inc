@@ -29,6 +29,25 @@ function otools_views_api($module = NULL, $api = NULL) {
 function otools_image_default_styles() {
   $styles = array();
 
+  // Exported image style: event_gallery_thumbnail.
+  $styles['event_gallery_thumbnail'] = array(
+    'label' => 'Event Gallery Thumbnail',
+    'effects' => array(
+      2 => array(
+        'name' => 'focal_point_scale_and_crop',
+        'data' => array(
+          'width' => 220,
+          'height' => 220,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: event_photo.
   $styles['event_photo'] = array(
     'label' => 'Event photo',
@@ -118,12 +137,15 @@ function otools_image_default_styles() {
   $styles['product_thumbnail'] = array(
     'label' => 'Product thumbnail',
     'effects' => array(
-      5 => array(
-        'name' => 'image_scale',
+      4 => array(
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
           'width' => 212,
           'height' => 180,
-          'upscale' => 0,
+          'focal_point_advanced' => array(
+            'shift_x' => '',
+            'shift_y' => '',
+          ),
         ),
         'weight' => 1,
       ),

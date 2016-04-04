@@ -260,13 +260,48 @@ function otools_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Event Photos */
+  $handler->display->display_options['fields']['field_event_photos']['id'] = 'field_event_photos';
+  $handler->display->display_options['fields']['field_event_photos']['table'] = 'field_data_field_event_photos';
+  $handler->display->display_options['fields']['field_event_photos']['field'] = 'field_event_photos';
+  $handler->display->display_options['fields']['field_event_photos']['label'] = '';
+  $handler->display->display_options['fields']['field_event_photos']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_photos']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_photos']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_event_photos']['settings'] = array(
+    'image_style' => 'event_gallery_thumbnail',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_event_photos']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_event_photos']['delta_offset'] = '0';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[path]">
+<div class="views-field-field-event-photos">[field_event_photos]</div>
+<div class="views-field-title">[title]</div>
+</a>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = '0';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
