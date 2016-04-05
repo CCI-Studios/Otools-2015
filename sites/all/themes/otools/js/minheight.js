@@ -7,6 +7,7 @@
         $mainWrapper = $(".main-wrapper");
         
         resize();
+        $(window).load(resize);
         $(window).resize(resize);
     });
     
