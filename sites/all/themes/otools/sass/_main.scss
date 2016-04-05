@@ -654,6 +654,11 @@ body.path-parts
     {
         display: none;
     }
+    #block-system-main
+    {
+        margin-top: 1.5em;
+        overflow: hidden;
+    }
 }
 .block-menu.menu-terms,
 #edit-field-feature-category-tid-wrapper
@@ -798,6 +803,7 @@ body.path-parts
             a
             {
                 background: url(../img/arrow-down.svg) no-repeat 93% center !important;
+                padding-right: 32px;
             }
         }
         .open .select-category a
@@ -844,20 +850,6 @@ body.path-parts
 {
     float: none;
     padding: 0;
-}
-
-body.path-about .main-wrapper > div
-{
-    background: url(../img/logo.svg) no-repeat 20px 20px;
-    background-size: 310px auto;
-    
-    & > div
-    {
-        margin-left: 350px;
-        border-left: 1px solid #f1f1f1;
-        padding-left: 40px;
-        min-height: 125px;
-    }
 }
 
 .block.cart-quote

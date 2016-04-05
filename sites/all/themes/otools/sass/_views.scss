@@ -88,14 +88,9 @@
         width: 240px;
         color: $green;
         margin: 16px 0;
-        border-left: 1px solid #f1f1f1;
-        margin-left: -1px;
         
         &:nth-child(4n + 1)
         {
-            border-left: 0;
-            margin-left: 0;
-            
             &:after
             {
                 content: "";
