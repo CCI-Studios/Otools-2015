@@ -216,7 +216,8 @@
         padding: 0 15px 0 0;
         border-right: 1px solid #f1f1f1;
         overflow: hidden;
-        
+        position: relative;
+
         ul
         {
             list-style: none;
@@ -246,6 +247,28 @@
                 width: 100%;
                 height: auto;
             }
+        }
+        .cover
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .click-to-zoom
+        {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            text-align: center;
+            font-size: 0.9em;
+            line-height: 2;
+            cursor: default;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
     }
     .views-field-field-photos-1
