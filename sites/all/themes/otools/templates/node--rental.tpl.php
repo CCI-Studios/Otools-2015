@@ -9,4 +9,8 @@ foreach ($node->field_rental_category['und'] as $term)
 print '<div class="related-items-container"><h2>Related Items</h2>';
 print views_embed_view('related_items', 'block', implode(',',$tids));
 print '</div>';
+
+print '<div class="recently-viewed-container"><h2>Previously Viewed</h2>';
+print views_embed_view('recently_read', 'block');
+print '</div>';
 ?>

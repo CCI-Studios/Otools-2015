@@ -813,7 +813,8 @@ body.path-parts
     }
 }
 
-.related-items-container
+.related-items-container,
+.recently-viewed-container
 {
     overflow: hidden;
     
@@ -844,6 +845,10 @@ body.path-parts
         font-size: 1.25em;
         padding-left: 16px;
     }
+}
+.recently-viewed-container:before
+{
+  display: none;
 }
 
 .views-exposed-form .views-exposed-widget
