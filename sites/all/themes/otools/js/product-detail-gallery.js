@@ -29,7 +29,7 @@
             var e = $.Event('mouseover');
             e.pageX = event.pageX;
             e.pageY = event.pageY;
-            $(".view-rental-detail .views-field-field-photos li").trigger(e);
+            $(".view-rental-detail .views-field-field-photos li.slick-active").trigger(e);
         })
     });
 })(jQuery);
