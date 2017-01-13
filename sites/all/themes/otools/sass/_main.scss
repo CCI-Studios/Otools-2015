@@ -656,7 +656,6 @@ body.path-parts
     }
     #block-system-main
     {
-        margin-top: 1.5em;
         overflow: hidden;
     }
 }
@@ -1010,4 +1009,54 @@ body.path-contact .main-wrapper
     width: 620px;
     max-width: 100%;
     height: 330px;
+}
+
+.search-form
+{
+    max-width: 420px;
+    margin: 25px auto;
+    
+    &:after
+    {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    
+    h2
+    {
+      padding-bottom: 0;
+    }
+    .form-type-textfield
+    {
+        float: left;
+        width: 70%;
+        margin: 0;
+        
+        input
+        {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        label
+        {
+          position: absolute;
+          left: -999999px;
+        }
+    }
+    .form-actions
+    {
+        float: left;
+        width: 30%;
+        
+        input
+        {
+            width: 100%;
+            padding: 0;
+        }
+    }
+}
+body.path-search .page-title
+{
+  display: none;
 }
