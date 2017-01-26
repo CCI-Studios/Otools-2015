@@ -291,6 +291,22 @@ a.button
                 background-image: url(../img/fb-white.svg);
             }
         }
+        .search a
+        {
+          &:before
+          {
+            content: "";
+            display: block; 
+            float: left;
+            height: 57px;
+            width: 25px;
+            background: url(../img/icon-search-green.svg) no-repeat left center;
+          }
+          &:hover:before
+          {
+            background-image: url(../img/icon-search-white.svg);
+          }
+        }
     }
 }
 

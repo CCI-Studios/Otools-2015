@@ -286,6 +286,10 @@
         {
             display: none;
         }
+        .search a:before
+        {
+          display: none;
+        }
     }
 }
 #block-system-main-menu.open ~ #block-menu-menu-top-menu
