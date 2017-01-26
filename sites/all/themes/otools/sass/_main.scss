@@ -1012,12 +1012,40 @@ body.path-contact .main-wrapper
     }
 }
 
-.field-name-field-event-photos img
+.field-name-field-event-photos,
+.field-name-field-golf-cart-photos
 {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 1em;
+  position: relative;
+  margin: 0 35px;
+  
+  .slick-prev, .slick-next
+  {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 35px;
+    background: transparent url(../img/arrow-left.svg) no-repeat left center;
+    background-size: 30px auto;
+    font-size: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .slick-prev
+  {
+    left: -35px;
+  }
+  .slick-next
+  {
+    right: -35px;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  img
+  {
+      width: 100%;
+      height: auto;
+      display: block;
+  }
 }
 
 .gmap

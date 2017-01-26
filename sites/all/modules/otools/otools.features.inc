@@ -11,6 +11,9 @@ function otools_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "feeds" && $api == "feeds_importer_default") {
     return array("version" => "1");
   }
+  if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
+    return array("version" => "2");
+  }
   if ($module == "taxonomy_display" && $api == "taxonomy_display") {
     return array("version" => "1");
   }
@@ -199,10 +202,26 @@ function otools_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'golf_cart_gallery' => array(
+      'name' => t('Golf Cart Gallery'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'header_image' => array(
       'name' => t('Header image'),
       'base' => 'node_content',
       'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'page' => array(
+      'name' => t('Basic page'),
+      'base' => 'node_content',
+      'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
@@ -219,6 +238,14 @@ function otools_node_info() {
       'name' => t('Rentals'),
       'base' => 'node_content',
       'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'webform' => array(
+      'name' => t('Webform'),
+      'base' => 'node_content',
+      'description' => t('Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
