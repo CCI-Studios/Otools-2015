@@ -95,3 +95,17 @@
 {
     width: 100%;
 }
+
+.webform-client-form-18
+{
+  .form-item
+  {
+    width: auto;
+    float: none;
+    
+    &:nth-child(2n+1)
+    {
+      margin-right: 0;
+    }
+  }
+}

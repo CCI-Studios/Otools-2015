@@ -59,3 +59,32 @@ button
     appearance: none;
     cursor: pointer;
 }
+
+.webform-client-form-18
+{
+  input, textarea
+  {
+    max-width: none;
+  }
+  .form-item
+  {
+    width: 48%;
+    float: left;
+    margin-top: 0;
+    
+    &:nth-child(2n+1)
+    {
+      margin-right: 4%;
+      clear: left;
+    }
+  }
+  .form-radios
+  {
+    .form-item
+    {
+      width: auto;
+      float: none;
+      margin-right: 0;
+    }
+  }
+}
