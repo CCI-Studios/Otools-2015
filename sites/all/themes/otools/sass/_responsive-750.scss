@@ -286,9 +286,16 @@
         {
             display: none;
         }
-        .search a:before
+        .search a
         {
-          display: none;
+          background: none;
+          font-size: inherit;
+          height: auto;
+          
+          &:hover
+          {
+            background: #02794a;
+          }
         }
     }
 }

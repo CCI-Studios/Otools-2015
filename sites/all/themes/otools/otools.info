@@ -6,6 +6,7 @@ scripts[] = js/menu.js
 scripts[] = js/slick.min.js
 scripts[] = js/carousel.js
 scripts[] = js/gallery-carousel.js
+scripts[] = js/search.js
 scripts[] = js/features.js
 scripts[] = js/category-dropdown.js
 scripts[] = js/jquery.zoom.min.js
