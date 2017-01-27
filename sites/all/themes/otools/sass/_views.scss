@@ -431,30 +431,6 @@
         {
             text-decoration: none;
             color: white;
-            
-            &:after
-            {
-                content: "";
-                position: absolute;
-                bottom: 2px;
-                left: 2px;
-                right: 2px;
-                height: 32px;
-                background-repeat: no-repeat;
-                z-index: 1;
-            }
-        }
-        &.mod3-0 a:after
-        {
-            background-image: url(../img/feature-bg1.png);
-        }
-        &.mod3-1 a:after
-        {
-            background-image: url(../img/feature-bg2.png);
-        }
-        &.mod3-2 a:after
-        {
-            background-image: url(../img/feature-bg3.png);
         }
     }
     .field-image
