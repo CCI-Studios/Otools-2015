@@ -286,6 +286,11 @@
         font-size: 1em;
         padding-top: 8px;
         padding-bottom: 12px;
+        
+        .field-content
+        {
+          display: inline;
+        }
     }
     .views-field-body
     {
