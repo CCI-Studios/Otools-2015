@@ -57,6 +57,7 @@ a.button
 .page-wrapper
 {
     position: relative;
+    padding-top: 156px;
 }
 
 .main-wrapper
@@ -83,8 +84,13 @@ a.button
 
 .navigation
 {
-    position: relative;
+    position: fixed;
     height: 156px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 101;
     
     &:after
     {

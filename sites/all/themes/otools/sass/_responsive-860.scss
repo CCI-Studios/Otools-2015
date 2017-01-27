@@ -9,6 +9,10 @@
         display: block;
     }
 }
+.page-wrapper
+{
+  padding-top: 126px;
+}
 .navigation
 {
     height: 126px;
@@ -21,7 +25,8 @@
 #block-menu-menu-top-menu ul.menu
 {
     .cart,
-    .fb
+    .fb,
+    .search
     {
         a
         {
@@ -118,4 +123,8 @@
             margin-right: 3px;
         }
     }
+}
+.navigation .search-form
+{
+  top: 49px;
 }
