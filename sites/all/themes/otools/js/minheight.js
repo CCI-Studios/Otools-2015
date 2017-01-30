@@ -12,8 +12,8 @@
     });
     
     function resize() {
-        if ($pageWrapper.height() < $(window).height()) {
-            var diff = $(window).height() - $pageWrapper.height();
+        if ($pageWrapper.outerHeight() < $(window).height()) {
+            var diff = $(window).height() - $pageWrapper.outerHeight();
             $mainWrapper.css("min-height", $mainWrapper.height() + diff);
         }
     }
