@@ -18,8 +18,14 @@
             slide: '.views-row',
             dots: false,
             arrows: true,
-            slidesToShow: 3,
+            slidesToShow: 4,
             responsive: [
+                {
+                    breakpoint: 940,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
                 {
                     breakpoint: 680,
                     settings: {
