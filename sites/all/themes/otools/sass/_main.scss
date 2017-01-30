@@ -1126,3 +1126,14 @@ body.path-search .page-title
     display: none;
   }
 }
+
+.basic-page-header-image
+{  
+  img
+  {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 auto;
+  }
+}
