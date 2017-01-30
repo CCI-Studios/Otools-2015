@@ -171,20 +171,14 @@
 {
   .views-field-field-photos:before
   {
-    content: "SOLD";
+    content: "";
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
     right: 0;
-    height: 30px;
-    line-height: 30px;
-    background: $green;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
+    width: 194px;
+    height: 112px;
+    background: url(../img/sold.png) no-repeat;
   }
 }
 
