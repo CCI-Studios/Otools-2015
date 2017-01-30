@@ -6,7 +6,7 @@
           }
           e.preventDefault();
           var $searchform = $(".navigation .search-form")
-          $searchform.slideToggle(250, function(){
+          $searchform.animate({width:"toggle"}, 250, function(){
             if ($searchform.css("display") == "block") {
               $searchform.find("input[type=text]").focus();
             }

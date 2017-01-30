@@ -126,5 +126,13 @@
 }
 .navigation .search-form
 {
-  top: 49px;
+  right: 50px;
+  max-width: 415px;
+  
+  .form-type-textfield input,
+  input[type=submit]
+  {
+    height: 49px;
+    line-height: 49px;
+  }
 }

@@ -1062,14 +1062,13 @@ body.path-contact .main-wrapper
 .navigation .search-form
 {
     display: none;
-    max-width: 420px;
+    max-width: 452px;
     position: absolute;
-    top: 58px;
+    top: 0;
     z-index: 102;
-    right: 0;
+    right: 56px;
     width: 100%;
     margin: 0;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
     
     &:after
     {
@@ -1092,6 +1091,8 @@ body.path-contact .main-wrapper
         {
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
+          height: 59px;
+          line-height: 59px;
         }
         label
         {
@@ -1104,6 +1105,9 @@ body.path-contact .main-wrapper
         float: left;
         width: 30%;
         padding: 0;
+        height: 59px;
+        line-height: 59px;
+        box-shadow: none;
     }
 }
 body.path-search .page-title
