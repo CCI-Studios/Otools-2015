@@ -1137,3 +1137,12 @@ body.path-search .page-title
     margin: 0 auto;
   }
 }
+
+.node-type-parts,
+.node-type-rental
+{
+  .listing-header
+  {
+    display: none;
+  }
+}
