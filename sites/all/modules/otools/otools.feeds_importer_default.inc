@@ -121,12 +121,54 @@ function otools_feeds_importer_default() {
           3 => array(
             'source' => 'DESC_1',
             'target' => 'title',
-            'unique' => FALSE,
+            'unique' => 0,
             'language' => 'und',
           ),
           4 => array(
             'source' => 'DESC_2',
             'target' => 'body',
+            'format' => 'full_html',
+            'language' => 'und',
+          ),
+          5 => array(
+            'source' => 'OT SKU',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          6 => array(
+            'source' => 'DESC_3',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          7 => array(
+            'source' => 'DESC_4',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          8 => array(
+            'source' => 'DESC_5',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          9 => array(
+            'source' => 'DESC_6',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          10 => array(
+            'source' => 'DESC_7',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          11 => array(
+            'source' => 'DESC_8',
+            'target' => 'Temporary target 1',
             'unique' => FALSE,
           ),
         ),
@@ -153,7 +195,7 @@ function otools_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'parts';
   $feeds_importer->config = array(
-    'name' => 'Parts',
+    'name' => 'Madjax Parts',
     'description' => '',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',

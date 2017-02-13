@@ -207,7 +207,7 @@ function otools_views_default_views() {
   $handler->display->display_options['path'] = 'carts/custom';
 
   /* Display: Sold */
-  $handler = $view->new_display('page', 'Sold', 'page_3');
+  $handler = $view->new_display('page', 'Sold', 'page_sold');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Sold Carts';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
