@@ -176,9 +176,10 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 194px;
+    width: 150px;
     height: 112px;
-    background: url(../img/sold.png) no-repeat;
+    background: url(../img/sold.png) no-repeat bottom right;
+    background-size: contain;
   }
 }
 
