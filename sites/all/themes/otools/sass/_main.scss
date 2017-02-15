@@ -762,6 +762,8 @@ body.path-parts
     float: left;
     margin-right: 20px;
     width: 182px;
+    position: relative;
+    z-index: 1;
     
     h2
     {
@@ -826,6 +828,10 @@ body.path-parts
             background: url(../img/arrow-up.svg) no-repeat 93% center !important;
         }
     }
+}
+.node-type-page .menu-terms-dropdown + #block-system-main
+{
+  overflow: hidden;
 }
 
 .related-items-container,
