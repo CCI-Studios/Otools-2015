@@ -1152,3 +1152,32 @@ body.path-search .page-title
     display: none;
   }
 }
+
+.node-basic-page-2-column
+{
+  .field-name-body
+  {
+    float: left;
+    width: 61%;
+    margin-right: 4%;
+    
+    @media screen and (max-width: 860px)
+    {
+      float: none;
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 0.8em;
+    }
+  }
+  .field-name-field-right-sidebar
+  {
+    float: left;
+    width: 35%;
+    
+    @media screen and (max-width: 860px)
+    {
+      float: none;
+      width: auto;
+    }
+  }
+}
