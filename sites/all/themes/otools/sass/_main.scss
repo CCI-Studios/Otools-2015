@@ -74,6 +74,7 @@ a.button
     img
     {
         max-width: 100%;
+        height: auto !important;
     }
     iframe
     {
@@ -1171,7 +1172,7 @@ body.path-search .page-title
   }
   .field-name-field-right-sidebar
   {
-    float: left;
+    float: right;
     width: 35%;
     
     @media screen and (max-width: 860px)
