@@ -63,7 +63,7 @@ a.button
 .main-wrapper
 {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1220px;
     margin: 0 auto;
     
     & > div
@@ -1179,5 +1179,66 @@ body.path-search .page-title
       float: none;
       width: auto;
     }
+  }
+}
+
+.rentals-carts,
+.rentals-equipment
+{
+  width: 48%;
+  float: left;
+  background: $green;
+  border: 2px solid $green;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(28,28,28,0.2);
+  
+  &
+  {
+    @media screen and (max-width: 540px)
+    {
+      width: 100%;
+      float: none;
+      margin-bottom: 1.5em;
+      margin-right: 0;
+    }
+  }
+  
+  a
+  {
+    color: white;
+    text-decoration: none;
+    
+    &:hover
+    {
+      text-decoration: underline;
+    }
+  }
+  img
+  {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  span
+  {
+    @include aaronbold();
+    display: block;
+    padding: 25px 15px;
+    text-align: center;
+    font-size: 1.5em;
+    background: linear-gradient(#068e57, $green);
+  }
+}
+.rentals-carts
+{
+  margin-right: 4%;
+}
+
+#block-system-main{
+  td, th
+  {
+    padding: 4px;
   }
 }
