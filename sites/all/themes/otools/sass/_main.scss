@@ -1042,6 +1042,12 @@ body.path-contact .main-wrapper
   position: relative;
   margin: 0 35px;
   
+  & > div
+  {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  
   .slick-prev, .slick-next
   {
     position: absolute;
