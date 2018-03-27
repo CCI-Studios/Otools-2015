@@ -17,6 +17,7 @@
 .navigation
 {
     position: static;
+    height: 122px;
     
     &:after
     {
@@ -68,7 +69,8 @@
                     height: 48px !important;
                     line-height: 48px !important;
                     width: auto !important;
-                    font-size: 0 !important;
+                    text-align: left;
+                    padding: 0 13px;
                     -webkit-transform: translateX(0);
                     transform: translateX(0);
                     
@@ -293,7 +295,7 @@
         .search a
         {
           background: none;
-          font-size: inherit;
+          font-size: 1.1em;
           height: auto;
           
           &:hover

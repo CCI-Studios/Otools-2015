@@ -11,50 +11,35 @@
     
     .slick-dots
     {
-        position: absolute;
-        z-index: 3;
-        bottom: 40px;
-        right: 10%;
         list-style: none;
+        text-align: center;
+        font-size: 0;
+        margin: 38px 0 30px 0;
         
         li
         {
-            float: left;
-            margin-left: 7px;
+            display: inline-block;
+            margin: 0 7px;
+            vertical-align: top;
             
             &.slick-active button
             {
-                border-color: $green;
+                background: $green;
             }
         }
         button
         {
             font-size: 0;
-            border: 5px solid white;
-            border-radius: 5px;
-            width: 0;
-            height: 0;
+            border: 0;
+            background: #cbcbcb;
+            border-radius: 4px;
+            width: 16px;
+            height: 16px;
             padding: 0;
             -webkit-appearance: none;
             cursor: pointer;
+            box-shadow: none;
             transition: all 0.2s;
-        }
-    }
-    
-    .view-content
-    {
-        &:after
-        {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 56px;
-            background: url(../img/header-bg.png) bottom center;
-            background-size: 100% 100%;
-            z-index: 2;
         }
     }
 }

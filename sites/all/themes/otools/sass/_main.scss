@@ -57,7 +57,7 @@ a.button
 .page-wrapper
 {
     position: relative;
-    padding-top: 156px;
+    padding-top: 129px;
 }
 
 .main-wrapper
@@ -86,7 +86,7 @@ a.button
 .navigation
 {
     position: fixed;
-    height: 156px;
+    height: 129px;
     width: 100%;
     top: 0;
     left: 0;
@@ -101,7 +101,7 @@ a.button
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 97px;
+        height: 70px;
         z-index: 101;
         background: $green;
         background: linear-gradient(to bottom, #269868, #068e57);
@@ -146,6 +146,13 @@ a.button
     position: relative;
     z-index: 102;
     margin-right: 24px;
+
+    img
+    {
+        display: block;
+        height: 100px;
+        width: auto;
+    }
 }
 
 .btn-menu
@@ -229,7 +236,6 @@ a.button
 
 #block-menu-menu-top-menu
 {
-    @include aaronbold();
     position: absolute;
     top: 0;
     right: 0;
@@ -253,12 +259,14 @@ a.button
             line-height: 59px;
             padding: 0 13px;
             text-decoration: none;
-            color: $green;
-            font-size: 0.9em;
+            color: black;
+            font-size: 0.9375em;
             border-color: #f1f1f1;
             border-style: solid;
             border-width: 0 1px;
+            font-weight: 700;
             margin-left: -1px;
+            text-transform: uppercase;
             
             &:hover, &:focus
             {
@@ -334,10 +342,10 @@ a.button
 #block-system-main-menu
 {
     position: static;
+    overflow: hidden;
 }
 #block-system-main-menu .content
 {
-    @include aaronbold();
     clear: right;
     color: white;
     padding-top: 59px;
@@ -354,17 +362,6 @@ a.button
         margin: 0;
         padding: 0;
     }
-    a
-    {
-        display: block;
-        color: white;
-        text-decoration: none;
-        
-        &:hover
-        {
-            text-decoration: underline;
-        }
-    }
     .nolink
     {
         opacity: 0.7;
@@ -374,138 +371,35 @@ a.button
     & > ul > li
     {
         float: left;
+        width: 33%;
         border-right: 1px solid #409f75;
         border-left: 1px solid #3b926c;
         
         & > a
         {
+            display: block;
             color: white;
-            line-height: 97px;
-            height: 97px;
+            line-height: 70px;
+            height: 70px;
             position: relative;
             z-index: 102;
-            padding: 0 30px;
-            font-size: 0;
-            
-            &:before
-            {
-                display: inline-block;
-                vertical-align: middle;
-                line-height: normal;
-                height: 40px;
-            }
+            padding: 0;
+            font-size: 1.9em;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-shadow: -1px 2px 2px rgba(0,0,0,0.3);
+            text-align: center;
+
             &:hover
             {
                 background: linear-gradient(to bottom, #068e57, #02794a);
             }
         }
-        &.carts
-        {
-            & > a:before
-            {
-                content: url(../img/menu-carts.svg);
-            }
-            & > ul:before
-            {
-                content: url(../img/menu-bg-carts.png);
-            }
-        }
-        &.parts
-        {
-            & > a:before
-            {
-                content: url(../img/menu-parts.svg);
-            }
-            & > ul:before
-            {
-                content: url(../img/menu-bg-parts.png);
-            }
-        }
-        &.rentals > a:before
-        {
-            content: url(../img/menu-rentals.svg);
-        }
         
         & > ul
         {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 80%;
-            padding: 40px 10%;
-            opacity: 0;
-            background: #60a986;
-            background: linear-gradient(to right, #068e57, #60a986, #068e57);
-            box-shadow: 0 3px 3px rgba(0,0,0,0.3);
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            text-shadow: -1px 2px 1px rgba(0,0,0,0.2);
-            filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=225);
-            overflow: hidden;
-            z-index: -1;
-            margin-top: -40px;
-            transition: all 0.3s;
-            
-            &:before
-            {
-                display: block;
-                float: right;
-            }
-            &:after
-            {
-                content: url(../img/menu-bg.png);
-                position: absolute;
-                bottom: -1px;
-                right: 0;
-                z-index: -1;
-            }
-            
-            li
-            {
-                float: left;
-                width: 23%;
-                max-width: 200px;
-                margin: 0 2% 1em 0;
-                
-                a
-                {
-                    height: 2em;
-                }
-            }
-            
-            & > .expanded
-            {
-                width: auto;
-                float: none;
-                margin: 0;
-                max-width: none;
-                
-                & > a
-                {
-                    font-size: 1.5em;
-                    height: auto;
-                    margin-bottom: 15px;
-                }
-            }
-            
-            ul
-            {
-                overflow: hidden;
-                padding-bottom: 15px;
-                position: relative;
-                
-                &:after
-                {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    bottom: 20px;
-                    left: 0;
-                    width: 100%;
-                    height: 1px;
-                    background: linear-gradient(to right, rgba(16,144,92,0.1), rgba(16,144,92,1), rgba(16,144,92,0.1));
-                }
-            }
+            display: none;
         }
         
         
@@ -516,43 +410,6 @@ a.button
         &.last
         {
             border-right: 0;
-        }
-        
-        &.expanded
-        {
-            & > a:after
-            {
-                content: "";
-                display: block;
-                position: absolute;
-                bottom: 9px;
-                left: 50%;
-                height: 9px;
-                width: 11px;
-                margin-left: -5px;
-                background: url(../img/arrow-down.svg) no-repeat bottom center;
-                transition: transform 0.5s, -webkit-transform 0.5s;
-            }
-            &.open
-            {
-                & > a
-                {
-                    background: linear-gradient(to bottom, #068e57, #02794a);
-                    
-                    &:after
-                    {
-                        -webkit-transform: rotate(180deg);
-                        transform: rotate(180deg);
-                    }
-                }
-                & > ul
-                {
-                    opacity: 0.96;
-                    z-index: 100;
-                    margin-top: 0;
-                    display: block;
-                }
-            }
         }
     }
 }
