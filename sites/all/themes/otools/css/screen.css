@@ -1323,6 +1323,8 @@ button {
     @media (max-width: 1060px) {
       .home-block a {
         font-size: 32px; } }
+    .home-block a:hover {
+      background: rgba(13, 144, 91, 0.55); }
     .home-block a .container {
       display: block;
       position: absolute;
