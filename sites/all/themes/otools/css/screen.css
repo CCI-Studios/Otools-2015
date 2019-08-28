@@ -1267,6 +1267,16 @@ button {
   float: none;
   margin-right: 0; }
 
+.webform-client-form-18 #trip-dates-wrapper {
+  float: left;
+  width: 48%; }
+  .webform-client-form-18 #trip-dates-wrapper .form-item {
+    float: none;
+    width: auto; }
+
+.webform-client-form-18 .form-actions {
+  clear: both; }
+
 .front .page-title {
   display: none; }
 

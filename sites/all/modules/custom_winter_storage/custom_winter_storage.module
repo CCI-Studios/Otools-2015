@@ -1,0 +1,111 @@
+<?php
+
+function custom_winter_storage_form_webform_client_form_18_alter(&$form, &$form_state) {
+  // echo '<pre>';
+  // print_r ($form);
+  // print_r ($form_state);
+  // echo '</pre>';
+  // return;
+
+  $park = $form_state['values']['submitted']['park_name'];
+  $trip_options = [];
+  global $user;
+  if ($user && is_array($user->roles) && in_array('administrator', $user->roles)) {
+    $trip_options = _custom_winter_storage_get_all_trips($form_state);
+  } else {
+    $trip_options = _custom_winter_storage_trip_dates($park, $form_state);
+  }
+
+  $form['submitted']['park_name']['#ajax'] = array(
+    'event' => 'change',
+    'wrapper' => 'trip-dates-wrapper',
+    'callback' => 'custom_winter_storage_park_name_ajax_callback',
+    'method' => 'replace',
+  );
+
+  $form['submitted']['trip_date']['#prefix'] = '<div id="trip-dates-wrapper">';
+  $form['submitted']['trip_date']['#suffix'] = '</div>';
+  $form['submitted']['trip_date']['#options'] = $trip_options;
+  $form['submitted']['trip_date']['#validated'] = TRUE;
+  $form['submitted']['trip_date']['#webform_validated'] = TRUE;
+}
+
+function custom_winter_storage_park_name_ajax_callback($form, $form_state) {
+  $park = $form_state['input']['submitted']['park_name'];
+  $form['submitted']['trip_date']['#options'] = _custom_winter_storage_trip_dates($park, $form_state);
+  return $form['submitted']['trip_date'];
+}
+
+function _custom_winter_storage_trip_dates($park, $form_state) {
+  $park_trips = [
+    'Birch_Park' => [],
+    'Birch_Pine' => ['26'],
+    'Blue_Water_Golf' => ['35'],
+    'Bluewater_Country' => ['15','17'],
+    'Campbell' => ['11'],
+    'Countryview' => ['13'],
+    'Grand_Cove' => ['32', '33'],
+    'Great_Canadian' => ['32'],
+    'Harbourside' => ['22'],
+    'Henderson' => ['12'],
+    'Huron_Haven' => ['31'],
+    'Kettle_Point' => ['28'],
+    'Klondyke' => ['19','20','21','22','23','24'],
+    'Lakewood_Christian' => ['16','17'],
+    'Menneset' => ['30','31'],
+    'Oakridge' => ['20','21'],
+    'Our_Ponderosa' => ['25','26','27','29'],
+    'Paradise_Valley' => ['17','18'],
+    'Paul_Bunyon' => ['34','36'],
+    'Pine_Lake' => ['35','36','37'],
+    'Rus_Ton' => ['20','21'],
+    'Sarnia_area' => ['18'],
+    'Shady_Pines' => [],
+    'Turnbulls_Grove' => ['32'],
+    'Warwick' => ['10','11','12','13','14'],
+    'Wildwood_by_the_River' => ['34','37'],
+    'Woodhaven' => ['27']
+  ];
+  $trip_options = [];
+  if (isset($park_trips[$park])) {
+    $trip_options = $park_trips[$park];
+  }
+
+  $all_trips = _custom_winter_storage_get_all_trips($form_state);
+
+  $out = [];
+  foreach ($trip_options as $tripID) {
+    $count = _custom_winter_storage_count_submissions_by_trip($tripID);
+    if ($count < 2) {
+      $out[$tripID] = $all_trips[$tripID]. '   COUNT='.$count;
+    }
+  }
+  if (count($out) === 0) {
+    $out = ['- None -'];
+  }
+  return $out;
+}
+
+function _custom_winter_storage_reformat_webform_state($form_state) {
+  $components = array();
+  foreach ($form_state['webform']['component_tree']['children'] as $component) {
+    $components[$component['form_key']] = $component;
+  }
+  return $components;
+}
+
+function _custom_winter_storage_count_submissions_by_trip($tripID) {
+  $sql = 'SELECT COUNT(*) FROM {webform_submitted_data} WHERE nid=18 AND cid=20 AND data=:trip';
+  $result = db_query($sql, [':trip'=>$tripID])->fetchField();
+  return $result;
+}
+
+function _custom_winter_storage_get_all_trips($form_state) {
+  $all_trip_items = explode("\r\n", $form_state['webform']['component_tree']['children'][20]['extra']['items']);
+  $all_trips = [];
+  for ($i=0; $i<count($all_trip_items); $i++) {
+    $parts = explode('|', $all_trip_items[$i]);
+    $all_trips[$parts[0]] = $parts[1];
+  }
+  return $all_trips;
+}

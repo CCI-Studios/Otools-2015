@@ -87,4 +87,19 @@ button
       margin-right: 0;
     }
   }
+  #trip-dates-wrapper
+  {
+    float: left;
+    width: 48%;
+
+    .form-item
+    {
+      float: none;
+      width: auto;
+    }
+  }
+  .form-actions
+  {
+    clear: both;
+  }
 }
