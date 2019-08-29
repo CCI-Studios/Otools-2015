@@ -33,6 +33,14 @@ textarea
     box-shadow: 2px 2px 3px rgba(0,0,0,0.25) inset;
 }
 
+select
+{
+  font-size: inherit;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+}
+
 label
 {
     font-size: 1.15em;
@@ -73,7 +81,7 @@ label.option
 
 .webform-client-form-18
 {
-  input, textarea
+  input, textarea, select
   {
     max-width: none;
   }
@@ -118,6 +126,7 @@ label.option
     {
       float: none;
       width: auto;
+      margin-right: 0;
     }
   }
   .form-actions
