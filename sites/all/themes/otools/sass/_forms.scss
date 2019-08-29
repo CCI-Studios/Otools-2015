@@ -60,6 +60,17 @@ button
     cursor: pointer;
 }
 
+input.form-checkbox,
+input.form-radio
+{
+  vertical-align: top;
+  margin-top: 5px;
+}
+label.option
+{
+  vertical-align: top;
+}
+
 .webform-client-form-18
 {
   input, textarea
@@ -91,6 +102,17 @@ button
   {
     float: left;
     width: 48%;
+    margin-right: 4%;
+
+    &
+    {
+      @media (max-width: 480px)
+      {
+        float: none;
+        width: auto;
+        margin-right: 0;
+      }
+    }
 
     .form-item
     {

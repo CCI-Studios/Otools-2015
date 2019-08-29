@@ -1251,6 +1251,14 @@ button {
   appearance: none;
   cursor: pointer; }
 
+input.form-checkbox,
+input.form-radio {
+  vertical-align: top;
+  margin-top: 5px; }
+
+label.option {
+  vertical-align: top; }
+
 .webform-client-form-18 input, .webform-client-form-18 textarea {
   max-width: none; }
 
@@ -1269,7 +1277,13 @@ button {
 
 .webform-client-form-18 #trip-dates-wrapper {
   float: left;
-  width: 48%; }
+  width: 48%;
+  margin-right: 4%; }
+  @media (max-width: 480px) {
+    .webform-client-form-18 #trip-dates-wrapper {
+      float: none;
+      width: auto;
+      margin-right: 0; } }
   .webform-client-form-18 #trip-dates-wrapper .form-item {
     float: none;
     width: auto; }

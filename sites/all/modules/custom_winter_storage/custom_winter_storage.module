@@ -1,19 +1,17 @@
 <?php
 
 function custom_winter_storage_form_webform_client_form_18_alter(&$form, &$form_state) {
-  // echo '<pre>';
-  // print_r ($form);
-  // print_r ($form_state);
-  // echo '</pre>';
-  // return;
-
-  $park = $form_state['values']['submitted']['park_name'];
+  $park = NULL;
+  if (isset($form_state['values'])) {
+    $park = $form_state['values']['submitted']['park_name'];
+  }
+  $components = $form_state['webform']['component_tree']['children'];
   $trip_options = [];
   global $user;
   if ($user && is_array($user->roles) && in_array('administrator', $user->roles)) {
-    $trip_options = _custom_winter_storage_get_all_trips($form_state);
+    $trip_options = _custom_winter_storage_get_all_trips($components);
   } else {
-    $trip_options = _custom_winter_storage_trip_dates($park, $form_state);
+    $trip_options = _custom_winter_storage_trip_dates($park, $components);
   }
 
   $form['submitted']['park_name']['#ajax'] = array(
@@ -28,15 +26,31 @@ function custom_winter_storage_form_webform_client_form_18_alter(&$form, &$form_
   $form['submitted']['trip_date']['#options'] = $trip_options;
   $form['submitted']['trip_date']['#validated'] = TRUE;
   $form['submitted']['trip_date']['#webform_validated'] = TRUE;
+
+  $form['#validate'][] = 'custom_winter_storage_form_validate';
 }
 
 function custom_winter_storage_park_name_ajax_callback($form, $form_state) {
   $park = $form_state['input']['submitted']['park_name'];
-  $form['submitted']['trip_date']['#options'] = _custom_winter_storage_trip_dates($park, $form_state);
+  $form['submitted']['trip_date']['#options'] = _custom_winter_storage_trip_dates($park, $form_state['webform']['component_tree']['children']);
   return $form['submitted']['trip_date'];
 }
 
-function _custom_winter_storage_trip_dates($park, $form_state) {
+function custom_winter_storage_form_validate($form, &$form_state) {
+  $tripID = $form_state['values']['submitted']['trip_date'];
+  if ($tripID == 'waitlist') {
+    // no need to validate a waitlist
+    return;
+  }
+  $count = _custom_winter_storage_count_submissions_by_trip($tripID);
+  if ($count + 1 > _custom_winter_storage_get_max_per_trip()) {
+    // adding this submission would exceed the max per trip
+    // reject the form submission
+    form_set_error('submitted[trip_date]', 'The trip date you have chosen is full.');
+  }
+}
+
+function _custom_winter_storage_trip_dates($park, $components) {
   $park_trips = [
     'Birch_Park' => [],
     'Birch_Pine' => ['26'],
@@ -71,24 +85,22 @@ function _custom_winter_storage_trip_dates($park, $form_state) {
     $trip_options = $park_trips[$park];
   }
 
-  $all_trips = _custom_winter_storage_get_all_trips($form_state);
+  $all_trips = _custom_winter_storage_get_all_trips($components);
 
   $out = [];
   foreach ($trip_options as $tripID) {
     $count = _custom_winter_storage_count_submissions_by_trip($tripID);
-    if ($count < 2) {
-      $out[$tripID] = $all_trips[$tripID]. '   COUNT='.$count;
+    if ($count < _custom_winter_storage_get_max_per_trip()) {
+      $out[$tripID] = $all_trips[$tripID];
     }
   }
-  if (count($out) === 0) {
-    $out = ['- None -'];
-  }
+  $out['waitlist'] = 'Add me to Wait List';
   return $out;
 }
 
-function _custom_winter_storage_reformat_webform_state($form_state) {
+function _custom_winter_storage_format_webform_components($webform) {
   $components = array();
-  foreach ($form_state['webform']['component_tree']['children'] as $component) {
+  foreach ($webform['component_tree']['children'] as $component) {
     $components[$component['form_key']] = $component;
   }
   return $components;
@@ -100,12 +112,93 @@ function _custom_winter_storage_count_submissions_by_trip($tripID) {
   return $result;
 }
 
-function _custom_winter_storage_get_all_trips($form_state) {
-  $all_trip_items = explode("\r\n", $form_state['webform']['component_tree']['children'][20]['extra']['items']);
+function _custom_winter_storage_get_all_trips($components) {
+  $all_trip_items = explode("\r\n", $components[20]['extra']['items']);
   $all_trips = [];
   for ($i=0; $i<count($all_trip_items); $i++) {
     $parts = explode('|', $all_trip_items[$i]);
     $all_trips[$parts[0]] = $parts[1];
   }
   return $all_trips;
+}
+
+function _custom_winter_storage_get_max_per_trip() {
+  return 2;
+}
+
+
+function custom_winter_storage_webform_submission_insert($node, $submission) {
+  $tripID = $submission->data[20][0];
+  if ($tripID == 'waitlist') {
+    // nothing to do for waitlist
+    return;
+  }
+  $count = _custom_winter_storage_count_submissions_by_trip($tripID);
+  if ($count == _custom_winter_storage_get_max_per_trip()) {
+    // now at the max per trip for the submitted trip
+    // send an email to admin
+
+    // get the trip name
+    $all_trips = _custom_winter_storage_get_all_trips($node->webform['components']);
+    $trip_name = $all_trips[$tripID];
+
+    // get all of the submissions for this trip
+    $submissions = _custom_winter_storage_get_submissions_by_trip($node->webform['components'], $tripID);
+
+    $admin_email = 'cmorris@ccistudios.com';
+    $from_email = 'noreply@otools.ca';
+    $mail_params = [
+      'trip' => $trip_name,
+      'submissions' => $submissions
+    ];
+    drupal_mail('custom_winter_storage', 'trip_full', $admin_email, language_default(), $mail_params, $from_email);
+  }
+}
+
+function custom_winter_storage_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'trip_full':
+      $body = $params['trip']."\r\n";
+      $body .= "\r\n";
+      foreach ($params['submissions'] as $sid=>$submission) {
+        $body .= "-----------\r\n";
+        $body .= "ID: $sid\r\n";
+        if ($submission['package'] == '1') {
+          $submission['package'] = 'Basic Electric Package';
+        } else if ($package == '2') {
+          $submission['package'] = 'Supreme Electric Package';
+        } else if ($package == '3') {
+          $submission['package'] = 'Basic Gas Package';
+        } else if ($package == '4') {
+          $submission['package'] = 'Supreme Gas Package';
+        }
+        foreach ($submission as $key=>$value) {
+          $body .= "$key: $value\r\n";
+        }
+        $body .= $GLOBALS['base_url']."/node/18/submission/$sid\r\n";
+      }
+      $message['body'][] = $body;
+      $message['subject'] = 'Winter Storage Trip Full';
+      break;
+  }
+}
+
+function _custom_winter_storage_get_submissions_by_trip($components, $tripID) {
+  $sql = 'SELECT sid FROM {webform_submitted_data} WHERE nid=18 AND cid=20 AND data=:trip';
+  $sids = db_query($sql, [':trip'=>$tripID])->fetchCol();
+  $submissions = [];
+  foreach ($sids as $sid) {
+    $submission = webform_get_submission(18, $sid);
+    $submission_data = _custom_winter_storage_format_submission_data($components, $submission);
+    $submissions[$sid] = $submission_data;
+  }
+  return $submissions;
+}
+
+function _custom_winter_storage_format_submission_data($components, $submission) {
+  $submission_data = [];
+  foreach ($components as $cid=>$component) {
+    $submission_data[$component['form_key']] = $submission->data[$cid][0];
+  }
+  return $submission_data;
 }
