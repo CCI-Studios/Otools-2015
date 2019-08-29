@@ -123,7 +123,7 @@ function _custom_winter_storage_get_all_trips($components) {
 }
 
 function _custom_winter_storage_get_max_per_trip() {
-  return 2;
+  return 10;
 }
 
 
@@ -145,7 +145,7 @@ function custom_winter_storage_webform_submission_insert($node, $submission) {
     // get all of the submissions for this trip
     $submissions = _custom_winter_storage_get_submissions_by_trip($node->webform['components'], $tripID);
 
-    $admin_email = 'cmorris@ccistudios.com';
+    $admin_email = 'tgascoigne@ccistudios.com';
     $from_email = 'noreply@otools.ca';
     $mail_params = [
       'trip' => $trip_name,
