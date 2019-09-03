@@ -81,56 +81,7 @@ label.option
 
 .webform-client-form-18
 {
-  input, textarea, select
-  {
-    max-width: none;
-  }
-  .form-item
-  {
-    width: 48%;
-    float: left;
-    margin-top: 0;
-    
-    &:nth-child(2n+1)
-    {
-      margin-right: 4%;
-      clear: left;
-    }
-  }
-  .form-radios
-  {
-    .form-item
-    {
-      width: auto;
-      float: none;
-      margin-right: 0;
-    }
-  }
-  #trip-dates-wrapper
-  {
-    float: left;
-    width: 48%;
-    margin-right: 4%;
-
-    &
-    {
-      @media (max-width: 480px)
-      {
-        float: none;
-        width: auto;
-        margin-right: 0;
-      }
-    }
-
-    .form-item
-    {
-      float: none;
-      width: auto;
-      margin-right: 0;
-    }
-  }
-  .form-actions
-  {
-    clear: both;
-  }
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
 }

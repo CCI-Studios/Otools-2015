@@ -1265,38 +1265,10 @@ input.form-radio {
 label.option {
   vertical-align: top; }
 
-.webform-client-form-18 input, .webform-client-form-18 textarea, .webform-client-form-18 select {
-  max-width: none; }
-
-.webform-client-form-18 .form-item {
-  width: 48%;
-  float: left;
-  margin-top: 0; }
-  .webform-client-form-18 .form-item:nth-child(2n+1) {
-    margin-right: 4%;
-    clear: left; }
-
-.webform-client-form-18 .form-radios .form-item {
-  width: auto;
-  float: none;
-  margin-right: 0; }
-
-.webform-client-form-18 #trip-dates-wrapper {
-  float: left;
-  width: 48%;
-  margin-right: 4%; }
-  @media (max-width: 480px) {
-    .webform-client-form-18 #trip-dates-wrapper {
-      float: none;
-      width: auto;
-      margin-right: 0; } }
-  .webform-client-form-18 #trip-dates-wrapper .form-item {
-    float: none;
-    width: auto;
-    margin-right: 0; }
-
-.webform-client-form-18 .form-actions {
-  clear: both; }
+.webform-client-form-18 {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto; }
 
 .front .page-title {
   display: none; }
