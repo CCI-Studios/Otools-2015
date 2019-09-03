@@ -52,7 +52,7 @@ function custom_winter_storage_form_validate($form, &$form_state) {
 
 function _custom_winter_storage_trip_dates($park, $components) {
   $park_trips = [
-    'Birch_Park' => [],
+    'Birch_Park' => ['32'],
     'Birch_Pine' => ['26'],
     'Blue_Water_Golf' => ['35'],
     'Bluewater_Country' => ['15','17'],
@@ -74,7 +74,7 @@ function _custom_winter_storage_trip_dates($park, $components) {
     'Pine_Lake' => ['35','36','37'],
     'Rus_Ton' => ['20','21'],
     'Sarnia_area' => ['18'],
-    'Shady_Pines' => [],
+    'Shady_Pines' => ['32'],
     'Turnbulls_Grove' => ['32'],
     'Warwick' => ['10','11','12','13','14'],
     'Wildwood_by_the_River' => ['34','37'],
