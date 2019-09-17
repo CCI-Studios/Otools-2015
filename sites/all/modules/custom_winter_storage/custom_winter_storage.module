@@ -37,6 +37,11 @@ function custom_winter_storage_park_name_ajax_callback($form, $form_state) {
 }
 
 function custom_winter_storage_form_validate($form, &$form_state) {
+  global $user;
+  if ($user && is_array($user->roles) && in_array('administrator', $user->roles)) {
+    // no need to validate admins
+    return;
+  }
   $tripID = $form_state['values']['submitted']['trip_date'];
   if ($tripID == 'waitlist') {
     // no need to validate a waitlist
