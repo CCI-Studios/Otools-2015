@@ -17,5 +17,6 @@ $aliases['live'] = array(
 	'remote-user'=> 'otools',
 	'path-aliases'=> array(
 		'%files'=> 'sites/default/files',
+		'%drush-script'=> '/home/otools/.composer/vendor/bin/drush'
 	),
 );
