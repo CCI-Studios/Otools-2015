@@ -53,6 +53,7 @@ if ($sid) {
       <input type="hidden" name="currency_code" value="CAD">
       <input type="hidden" name="amount" value="<?php print $amount;?>">
       <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="tax_rate" value="13">
       <input type="hidden" name="item_name" value="<?php print $package_name;?>">
       <input type="hidden" name="no_shipping" value="1">
       <input type="hidden" name="no_note" value="1">
