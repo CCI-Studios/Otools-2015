@@ -70,7 +70,7 @@ function _custom_winter_storage_trip_dates($park, $components) {
     'Huron_Haven' => ['31'],
     'Kettle_Point' => ['28'],
     'Klondyke' => ['19','20','21','22','23','24'],
-    'Lakewood_Christian' => ['16','17'],
+    'Lakewood_Christian' => ['17'],
     'Menneset' => ['30','31'],
     'Oakridge' => ['20','21','23','24'],
     'Our_Ponderosa' => ['25','26','27','29'],
@@ -78,10 +78,10 @@ function _custom_winter_storage_trip_dates($park, $components) {
     'Paul_Bunyon' => ['34','36'],
     'Pine_Lake' => ['35','36','37'],
     'Rus_Ton' => ['20','21','23','24'],
-    'Sarnia_area' => ['18'],
+    'Sarnia_area' => ['15','18'],
     'Shady_Pines' => ['32','33'],
     'Turnbulls_Grove' => ['32','33'],
-    'Warwick' => ['10','11','12','13','14'],
+    'Warwick' => ['11','12','13','14'],
     'Wildwood_by_the_River' => ['34','37'],
     'Woodhaven' => ['27']
   ];
