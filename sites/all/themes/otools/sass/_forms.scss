@@ -5,18 +5,20 @@
 
 input[type=text],
 input[type=email],
-input[type=password]
+input[type=password],
+input[type=number],
+select
 {
     box-sizing: border-box;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 5px;
-    font-size: 1.25em;
-    border: 1px solid green;
-    border-radius: 3px;
+    height: 52px;
+    line-height: 50px;
+    padding: 0 25px;
+    font-size: 16px;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.25) inset;
+    color: black;
 }
 
 textarea
@@ -24,21 +26,13 @@ textarea
     box-sizing: border-box;
     height: 120px;
     line-height: 1.1;
-    padding: 0 5px;
-    font-size: 1.15em;
-    border: 1px solid green;
-    border-radius: 3px;
+    padding: 20px 25px;
+    font-size: 16px;
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.25) inset;
-}
-
-select
-{
-  font-size: inherit;
-  width: 100%;
-  max-width: 400px;
-  height: 40px;
+    color: black;
 }
 
 label
@@ -49,23 +43,66 @@ label
 
 input[type=button],
 input[type=submit],
-button
+button,
+.green-button
 {
-    @include aaronbold();
-    font-size: inherit;
-    display: block;
+    display: inline-block;
     color: white;
     text-decoration: none;
-    line-height: 40px;
-    height: 40px;
+    line-height: 50px;
+    height: 50px;
     position: relative;
-    background: linear-gradient(to bottom, #068e57, #02794a);
-    box-shadow: -1px 2px 2px rgba(0,0,0,0.2);
+    background: linear-gradient(to right, #2c754d, #408560);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
     border: 0;
-    padding: 0 24px;
+    padding: 0 30px;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
+
+    &.previous-button
+    {
+      padding-left: 40px;
+      position: relative;
+
+      &:before
+      {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        background-image: url(../img/icon-back-button.svg);
+        background-repeat: no-repeat;
+        background-position: 20px center;
+        background-size: 8px auto;
+      }
+    }
+    &.next-button
+    {
+      padding-right: 40px;
+      position: relative;
+
+      &:before
+      {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        background-image: url(../img/icon-next-button.svg);
+        background-repeat: no-repeat;
+        background-position: 20px center;
+        background-size: 8px auto;
+      }
+    }
 }
 
 input.form-checkbox,
@@ -84,4 +121,122 @@ label.option
   display: block;
   max-width: 400px;
   margin: 0 auto;
+}
+
+.webform-client-form-19
+{
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+
+  label
+  {
+    position: absolute;
+    left: -999999px;
+  }
+  .webform-component
+  {
+    margin-bottom: 25px;
+    margin-top: 0;
+  }
+  .webform-component--full-name,
+  .webform-component--year
+  {
+    float: left;
+    width: 32%;
+    clear: left;
+    margin-right: 2%;
+  }
+  .webform-component--email-address,
+  .webform-component--make
+  {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+  }
+  .webform-component--phone-number,
+  .webform-component--model
+  {
+    float: left;
+    width: 32%;
+  }
+  textarea
+  {
+    max-width: 100%;
+  }
+  .form-actions
+  {
+    text-align: center;
+  }
+  .form-submit
+  {
+    width: 250px;
+  }
+}
+.path-custom-cart-quote
+{
+  .page-title
+  {
+    text-align: center;
+  }
+}
+
+.block--contact-form
+{
+  clear: both;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 80px;
+
+  .node > h2
+  {
+    display: none;
+  }
+  h2
+  {
+    font-size: 36px;
+  }
+
+  label
+  {
+    position: absolute;
+    left: -999999px;
+  }
+  .webform-component
+  {
+    margin-bottom: 25px;
+    margin-top: 0;
+  }
+  .webform-component--first-name,
+  .webform-component--email
+  {
+    float: left;
+    width: 32%;
+    clear: left;
+    margin-right: 2%;
+  }
+  .webform-component--last-name,
+  .webform-component--phone-number
+  {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+  }
+  .webform-component--company,
+  .webform-component--reason-for-inquiry
+  {
+    float: left;
+    width: 32%;
+  }
+  textarea
+  {
+    max-width: 100%;
+  }
+  .form-actions
+  {
+    text-align: center;
+  }
+  .form-submit
+  {
+    width: 250px;
+  }
 }

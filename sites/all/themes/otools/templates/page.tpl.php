@@ -103,6 +103,8 @@
 
     </div></div></div> <!-- /.main-wrapper -->
 
+    <?php print render($page['after_content']); ?>
+
     <div class="footer"><div><div>
       <?php print render($page['footer']); ?>
     </div></div></div> <!-- /.footer -->

@@ -4,18 +4,24 @@ body
     line-height: 1.4;
 }
 
-a,
-a:visited
+a
 {
     color: $green;
 }
 
 h1, h2, h3, h4, h5, h6
 {
-    @include aaronbold();
-    font-weight: normal;
-    color: $green;
+    font-weight: bold;
     padding-bottom: 0.25em;
+}
+h1
+{
+    font-size: 36px;
+    font-weight: bold;
+}
+h2
+{
+    margin-bottom: 0.8em;
 }
 
 p
@@ -32,14 +38,14 @@ hr
 {
     border: 0;
     height: 1px;
-    margin: 20px 0;
-    background: linear-gradient(to right, rgba(16,144,92,0), #10905c, rgba(16,144,92,0));
+    margin: 30px 0;
+    background: #b2b2b2;
 }
 
 ul, ol
 {
-    margin-left: 30px;
-    margin-bottom: 0.8em;
+    margin: 0 0 1em 0;
+    padding-left: 30px;
 }
 
 a.button
@@ -57,7 +63,7 @@ a.button
 .page-wrapper
 {
     position: relative;
-    padding-top: 129px;
+    padding-top: 80px;
 }
 
 .main-wrapper
@@ -68,13 +74,34 @@ a.button
     
     & > div
     {
-        padding: 20px;
+        padding: 40px 20px;
     }
     
     img
     {
         max-width: 100%;
         height: auto !important;
+    }
+    .image-align-left
+    {
+        margin-right: 40px;
+        margin-bottom: 40px;
+    }
+    .image-align-right
+    {
+        margin-left: 40px;
+        margin-bottom: 40px;
+    }
+    .image-align-left,
+    .image-align-right
+    {
+        @media (max-width: 760px)
+        {
+            float: none !important;
+            display: block;
+            margin: 0 auto 40px auto;
+            max-width: 88%;
+        }
     }
     iframe
     {
@@ -86,7 +113,7 @@ a.button
 .navigation
 {
     position: fixed;
-    height: 129px;
+    height: 80px;
     width: 100%;
     top: 0;
     left: 0;
@@ -99,9 +126,9 @@ a.button
         display: block;
         position: absolute;
         left: 0;
-        bottom: 0;
+        top: 40px;
         width: 100%;
-        height: 70px;
+        height: 40px;
         z-index: 101;
         background: $green;
         background: linear-gradient(to bottom, #269868, #068e57);
@@ -111,7 +138,7 @@ a.button
     & > div
     {
         width: 100%;
-        max-width: 1000px;
+        max-width: 1140px;
         margin: 0 auto;
         
         & > div
@@ -142,7 +169,7 @@ a.button
 {
     float: left;
     display: block;
-    padding: 11px 0;
+    padding-top: 10px;
     position: relative;
     z-index: 102;
     margin-right: 24px;
@@ -150,7 +177,7 @@ a.button
     img
     {
         display: block;
-        height: 100px;
+        height: 80px;
         width: auto;
     }
 }
@@ -163,9 +190,10 @@ a.button
     top: 0;
     font-size: 0;
     color: transparent;
-    height: 50px;
-    width: 60px;
+    height: 40px;
+    width: 50px;
     background: url(../img/icon-menu-green.svg) no-repeat center center;
+    background-size: 25px auto;
     z-index: 1002;
     
     &.open,
@@ -202,9 +230,9 @@ a.button
     {
         @include aaronbold();
         display: block;
-        height: 49px;
+        height: 40px;
         min-width: 28px;
-        line-height: 49px;
+        line-height: 40px;
         color: $green;
         background-repeat: no-repeat;
         font-size: 0;
@@ -228,7 +256,7 @@ a.button
     }
     .fb a
     {
-        background-image: url(../img/fb.svg);
+        background-image: url(../img/fb-black.svg);
         background-size: 26px 26px;
         background-position: center center;
     }
@@ -236,9 +264,7 @@ a.button
 
 #block-menu-menu-top-menu
 {
-    position: absolute;
-    top: 0;
-    right: 0;
+    float: right;
     
     ul.menu
     {
@@ -256,17 +282,16 @@ a.button
         a
         {
             display: block;
-            line-height: 59px;
+            line-height: 40px;
             padding: 0 13px;
             text-decoration: none;
             color: black;
-            font-size: 0.9375em;
+            font-size: 15px;
             border-color: #f1f1f1;
             border-style: solid;
             border-width: 0 1px;
             font-weight: 700;
             margin-left: -1px;
-            text-transform: uppercase;
             
             &:hover, &:focus
             {
@@ -280,7 +305,7 @@ a.button
         .search a
         {
             font-size: 0;
-            height: 59px;
+            height: 40px;
             min-width: 28px;
             background-repeat: no-repeat;
             
@@ -315,7 +340,7 @@ a.button
         }
         .fb a
         {
-            background-image: url(../img/fb.svg);
+            background-image: url(../img/fb-black.svg);
             background-position: center center;
             background-size: 20px 20px;
             
@@ -328,7 +353,7 @@ a.button
         {
           font-size: 0;
           
-          background-image: url(../img/icon-search-green.svg);
+          background-image: url(../img/icon-search-black.svg);
           background-position: center center;
           
           &:hover, &:focus, &:before
@@ -339,16 +364,11 @@ a.button
     }
 }
 
-#block-system-main-menu
-{
-    position: static;
-    overflow: hidden;
-}
 #block-system-main-menu .content
 {
     clear: right;
     color: white;
-    padding-top: 59px;
+    padding-left: 210px;
     
     ul
     {
@@ -379,12 +399,12 @@ a.button
         {
             display: block;
             color: white;
-            line-height: 70px;
-            height: 70px;
+            line-height: 40px;
+            height: 40px;
             position: relative;
             z-index: 102;
             padding: 0;
-            font-size: 1.9em;
+            font-size: 24px;
             font-weight: 700;
             text-transform: uppercase;
             text-decoration: none;
@@ -396,10 +416,96 @@ a.button
                 background: linear-gradient(to bottom, #068e57, #02794a);
             }
         }
+        &.expanded > a:after
+        {
+            content: "";
+            background: url('../img/icon-main-menu-arrow.svg') no-repeat center center;
+            background-size: contain;
+            vertical-align: middle;
+            margin-left: 8px;
+            margin-top: -2px;
+            display: inline-block;
+            width: 15px;
+            height: 8px;
+            filter: drop-shadow(-1px 2px 2px rgba(0,0,0,0.4));
+        }
         
         & > ul
         {
             display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            padding: 35px 10%;
+            background-color: #f3f3f3;
+            column-count: 4;
+            column-gap: 40px;
+
+            &
+            {
+                @media (max-width: 1000px)
+                {
+                    column-count: 3;
+                }
+            }
+
+            &:after
+            {
+                content: "";
+                display: block;
+                width: 100%;
+                padding-bottom: 50%;
+                height: auto;
+                background: url("../img/main-menu-photo.jpg") no-repeat top left;
+                background-size: contain;
+                break-inside: avoid;
+            }
+
+            & > li
+            {
+                display: block;
+                margin-bottom: 25px;
+                break-inside: avoid;
+
+                & > a
+                {
+                    color: black;
+                    font-weight: bold;
+                    text-decoration: none;
+
+                    &:hover
+                    {
+                        color: $green;
+                    }
+                }
+                & > ul
+                {
+                    margin-left: 20px;
+
+                    & > li
+                    {
+                        display: block;
+                        margin-bottom: 4px;
+
+                        & > a
+                        {
+                            color: black;
+                            text-decoration: none;
+
+                            &:hover
+                            {
+                                color: $green;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:hover > ul,
+        &.open > ul
+        {
+            display: block;
         }
         
         
@@ -422,27 +528,31 @@ a.button
 
 .footer
 {
-    clear: both;
-    margin-top: 20px;
-    background: #068f58;
-    background: linear-gradient(to right, #068f58, #62a984);
+    padding-top: 80px;
+    background-image: url(../img/bg-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     color: white;
     position: relative;
-    
-    &:before
+
+    .not-front &
     {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 116px;
-        background: url(../img/footer-top.png) no-repeat center top;
-        background-size: 100% 100%;
+        clear: both;
+    }
+
+    &
+    {
+        @media (max-width: 760px)
+        {
+            background-size: 250% 150%;
+            background-position: bottom center;
+        }
     }
     
     & > div
     {
         width: 100%;
-        max-width: 1000px;
+        max-width: 1140px;
         margin: 0 auto;
         
         & > div
@@ -458,9 +568,15 @@ a.button
 }
 #block-menu-menu-footer-menu .content
 {
-    float: left;
-    text-shadow: -1px 2px 2px rgba(0,0,0,0.2);
-    
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 25px;
+
+    &:after
+    {
+        content: "";
+        display: block;
+        clear: both;
+    }
     ul
     {
         list-style: none;
@@ -470,79 +586,128 @@ a.button
     li
     {
         list-style: none;
-        margin: 0 30px 10px 0;
-        padding: 0;
+        margin: 0 20px 0 0;
+        padding: 0 20px 0 0;
         float: left;
-    }
-    .col1
-    {
-        width: 160px;
-        clear: left;
-    }
-    .col2
-    {
-        width: 192px;
-    }
-    .col3
-    {
-        width: 168px;
+        border-right: 1.5px solid white;
+        line-height: 1;
+
+        &:last-child
+        {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: 0;
+        }
     }
     a
     {
-        @include aaronbold;
         display: block;
         color: white;
         text-decoration: none;
-        line-height: 30px;
-        height: 30px;
-        padding-left: 24px;
-        margin-left: -24px;
-        position: relative;
-        
-        &:hover, &:focus
+        font-size: 18px;
+
+        &:hover
         {
-            background: linear-gradient(to bottom, #068e57, #02794a);
-            box-shadow: -1px 2px 2px rgba(0,0,0,0.2);
-            
-            &:before
-            {
-                content: "";
-                display: block;
-                position: absolute;
-                left: 8px;
-                top: 50%;
-                background: url(../img/arrow-down.svg) no-repeat center center;
-                width: 11px;
-                height: 9px;
-                margin-top: -5px;
-                -webkit-transform: rotate(-90deg);
-                transform: rotate(-90deg);
-            }
+            text-decoration: underline;
+        }
+    }
+    .fb
+    {
+        float: right;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        
+        a
+        {
+            font-size: 0;
+            width: 18px;
+            height: 18px;
+            background: url(../img/fb-white.svg) no-repeat center center;
+            background-size: contain;
         }
     }
 }
 .block.footer-info
 {
     text-align: right;
-    font-size: 0.9em;
     line-height: 1.2;
-    position: relative;
-    top: -50px;
-    overflow: hidden;
-    
-    a.phone
+    margin-bottom: 30px;
+
+    &
     {
-        font-size: 0;
-        display: inline-block;
-        height: 30px;
-        width: 194px;
-        background: url(../img/phone-number.svg) no-repeat top right;
+        @media (max-width: 760px)
+        {
+            text-align: center;
+        }
+    }
+    
+    &:after
+    {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .logo-otools
+    {
+        float: left;
+        margin-right: 20px;
+        height: 180px;
+        width: auto;
+
+        @media (max-width: 760px)
+        {
+            float: none;
+            display: block;
+            width: 80%;
+            max-width: 320px;
+            height: auto;
+            margin: 0 auto 25px auto;
+        }
+    }
+    .logo-club-car
+    {
+        float: right;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        height: 110px;
+        width: auto;
+
+        @media (max-width: 760px)
+        {
+            float: none;
+            display: block;
+            width: 80%;
+            max-width: 260px;
+            height: auto;
+            margin: 0 auto 25px auto;
+        }
+    }
+    p
+    {
+        clear: right;
+
+        span
+        {
+            display: inline-block;
+        }
+    }
+    a
+    {
+        text-decoration: none;
+
+        &:hover
+        {
+            text-decoration: underline;
+        }
     }
 }
 
 body.path-rentals,
 body.path-carts,
-body.path-parts
+body.path-parts,
+body.path-about
 {
     .page-title
     {
@@ -857,39 +1022,9 @@ body.path-parts
 
 body.path-contact .main-wrapper
 {
-    color: $green;
-    
     .page-title
     {
         display: none;
-    }
-    
-    .left
-    {
-        float: left;
-        padding-bottom: 1.5em;
-    }
-    .right
-    {
-        text-align: right;
-    }
-    
-    hr
-    {
-        clear: both;
-    }
-    
-    a
-    {
-        color: $green;
-    }
-    a.phone
-    {
-        font-size: 0;
-        display: inline-block;
-        height: 30px;
-        width: 194px;
-        background: url(../img/phone-number.svg) no-repeat top right;
     }
 }
 
@@ -1122,4 +1257,144 @@ body.path-search .page-title
   {
     padding: 4px;
   }
+}
+
+.block--breadcrumbs
+{
+    margin-bottom: 40px;
+
+    .content
+    {
+        color: $green;
+        font-size: 14px;
+
+        a
+        {
+            text-decoration: none;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.block--page-header
+{
+    .bg-container
+    {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding: 100px 25px;
+        position: relative;
+
+        &:before
+        {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.25;
+        }
+    }
+    h1
+    {
+        color: white;
+        text-align: center;
+        font-size: 56px;
+        font-weight: bold;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.55);
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.block--contact-map
+{
+    clear: both;
+    margin-bottom: -20%;
+    position: relative;
+
+    &:after
+    {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0));
+    }
+
+    .map
+    {
+        padding-bottom: 45%;
+        background: url(../img/contact-map.jpg) no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.path-about .main-wrapper ul
+{
+    overflow: hidden;
+}
+
+.about-team
+{
+    position: relative;
+
+    &:before
+    {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        border-right: 1px solid #b2b2b2;
+    }
+    &:after
+    {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .left
+    {
+        float: left;
+        width: 46%;
+        margin-right: 8%;
+    }
+    .right
+    {
+        float: left;
+        width: 46%;
+    }
+    &
+    {
+        @media (max-width: 760px)
+        {
+            &:before
+            {
+                display: none;
+            }
+            .left
+            {
+                float: none;
+                width: auto;
+                margin-right: 0;
+                margin-bottom: 1.5em;
+            }
+            .right
+            {
+                float: none;
+                width: auto;
+            }
+        }
+    }
 }

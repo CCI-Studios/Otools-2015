@@ -2,3 +2,42 @@
 {
     margin-right: 10px;
 }
+
+.view-rental-detail
+{
+    position: relative;
+    
+    .views-field-field-photos
+    {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+    }
+    .views-field-field-photos-1
+    {
+        width: 415px;
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+        position: relative;
+        z-index: 1;
+        
+        .slick-list,
+        .slick-track
+        {
+            height: auto !important;
+        }
+        
+        li
+        {
+            float: left;
+            width: auto !important;
+            margin-right: 3px;
+        }
+    }
+    .views-field-nothing
+    {
+        overflow: visible;
+        clear: both;
+    }
+}

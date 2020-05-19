@@ -2,11 +2,12 @@
 
 $aliases['dev'] = array(
 	'uri'=> 'otools.ccistaging.com',
-	'root' => '/home/staging/subdomains/otools/public_html',
+	'root' => '/home/staging/otools.ccistaging.com/html',
 	'remote-host'=> 'host.ccistudios.com',
 	'remote-user'=> 'staging',
 	'path-aliases'=> array(
 		'%files'=> 'sites/default/files',
+		'%drush-script'=> '/home/staging/.config/composer/vendor/bin/drush'
 	),
 );
 

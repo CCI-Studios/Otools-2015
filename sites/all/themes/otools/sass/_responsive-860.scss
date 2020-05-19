@@ -1,58 +1,8 @@
-
-#block-menu-menu-footer-menu .content
-{
-    ul
-    {
-        width: 450px;
-        margin-left: 10%;
-    }
-    .col1,
-    .col2,
-    .col3
-    {
-        clear: none;
-        width: 192px;
-    }
-}
-
 .block.cart-quote
 {
     margin-top: 50px;
 }
 
-.view-rental-detail
-{
-    position: relative;
-    
-    .views-field-field-photos
-    {
-        padding-right: 0;
-        margin-right: 0;
-        border-right: 0;
-    }
-    .views-field-field-photos-1
-    {
-        width: 415px;
-        padding-right: 0;
-        margin-right: 0;
-        border-right: 0;
-        position: relative;
-        z-index: 1;
-        
-        .slick-list,
-        .slick-track
-        {
-            height: auto !important;
-        }
-        
-        li
-        {
-            float: left;
-            width: auto !important;
-            margin-right: 3px;
-        }
-    }
-}
 .navigation .search-form
 {
   right: 50px;

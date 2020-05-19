@@ -17,21 +17,14 @@
 .navigation
 {
     position: static;
-    height: 122px;
-    
-    &:after
-    {
-        bottom: auto;
-        top: 49px;
-    }
 }
 .region-navigation
 {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
     width: 200px;
+    height: 100%;
     background: rgba(4,134,83,0.95);
     overflow: hidden;
     z-index: 1000;
@@ -39,6 +32,7 @@
     backface-visibility: hidden;
     -webkit-perspective: 1000;
     perspective: 1000;
+    padding-top: 40px;
     -webkit-transform: translateX(-200px);
     transform: translateX(-200px);
     transition: transform 0.4s;
@@ -53,6 +47,8 @@
 {    
     .content
     {
+        padding-left: 0;
+
         & > ul
         {
             position: relative;
@@ -97,41 +93,61 @@
                     opacity: 1 !important;
                     z-index: 0;
                     overflow: visible;
+                    column-count: 1;
+                    display: block;
+                    padding: 0;
                     
                     &:after
                     {
                         display: none;
                     }
                     
-                    li
+                    & > li
                     {
                         width: auto;
                         float: none;
                         margin: 0;
                         max-width: none;
                         
-                        a
+                        & > a
                         {
                             height: 48px;
                             width: 180px;
                             display: table-cell;
                             vertical-align: middle;
+                            color: white;
                         }
-                    }
-                    ul
-                    {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        z-index: 0;
-                        padding: 0;
-                        
-                        &:after
+                        & > ul
                         {
-                            display: none;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            z-index: 0;
+                            padding: 0;
+                            margin: 0;
+                            
+                            &:after
+                            {
+                                display: none;
+                            }
+                            & > li
+                            {
+                                margin: 0;
+
+                                & > a
+                                {
+                                    color: white;
+                                    font-weight: bold;
+                                    height: 48px;
+                                    width: 180px;
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                }
+                            }
                         }
                     }
+                    
                 }
                 &.expanded
                 {
@@ -197,12 +213,7 @@
             }
         }
         .expanded:not(.view-all) > a
-        {
-            height: 2em;
-            line-height: 2em;
-            font-size: 1.5em;
-            text-shadow: -1px 0 0 black, 1px 0 0 black,0 1px 0 black,0 -1px 0 black;
-            
+        {            
             &:after
             {
                 content: "";
@@ -266,6 +277,7 @@
     position: relative;
     transition: transform 0.4s, -webkit-transform 0.4s;
     z-index: 1;
+    float: none;
     
     ul.menu
     {
@@ -319,33 +331,6 @@
 .top-menu-mobile
 {
     display: block;
-}
-
-.footer:before
-{
-    height: 80px;
-}
-#block-menu-menu-footer-menu .content
-{
-    float: none;
-    
-    ul
-    {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    li
-    {
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-}
-.block.footer-info
-{
-    clear: both;
-    position: static;
-    text-align: center;
-    padding-top: 30px;
 }
 
 .view-listings .views-row
