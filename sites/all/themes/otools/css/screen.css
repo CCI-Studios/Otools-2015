@@ -53,16 +53,6 @@ ul, ol {
   margin: 0 0 1em 0;
   padding-left: 30px; }
 
-a.button {
-  font-family: "aaronboldregular", sans-serif;
-  display: inline-block;
-  text-decoration: none;
-  color: white;
-  line-height: 1;
-  padding: 10px 12px;
-  background: #037a4b;
-  background: linear-gradient(to bottom, #068e57, #02794a); }
-
 .page-wrapper {
   position: relative;
   padding-top: 80px; }
@@ -1415,6 +1405,7 @@ label {
 input[type=button],
 input[type=submit],
 button,
+.button,
 .green-button {
   display: inline-block;
   color: white;
@@ -1437,12 +1428,14 @@ button,
   input[type=button].previous-button,
   input[type=submit].previous-button,
   button.previous-button,
+  .button.previous-button,
   .green-button.previous-button {
     padding-left: 40px;
     position: relative; }
     input[type=button].previous-button:before,
     input[type=submit].previous-button:before,
     button.previous-button:before,
+    .button.previous-button:before,
     .green-button.previous-button:before {
       content: "";
       position: absolute;
@@ -1457,12 +1450,14 @@ button,
   input[type=button].next-button,
   input[type=submit].next-button,
   button.next-button,
+  .button.next-button,
   .green-button.next-button {
     padding-right: 40px;
     position: relative; }
     input[type=button].next-button:before,
     input[type=submit].next-button:before,
     button.next-button:before,
+    .button.next-button:before,
     .green-button.next-button:before {
       content: "";
       position: absolute;

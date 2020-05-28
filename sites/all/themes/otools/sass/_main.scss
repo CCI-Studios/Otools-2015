@@ -48,18 +48,6 @@ ul, ol
     padding-left: 30px;
 }
 
-a.button
-{
-    @include aaronbold();
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    line-height: 1;
-    padding: 10px 12px;
-    background: $green;
-    background: linear-gradient(to bottom, #068e57, #02794a);
-}
-
 .page-wrapper
 {
     position: relative;
